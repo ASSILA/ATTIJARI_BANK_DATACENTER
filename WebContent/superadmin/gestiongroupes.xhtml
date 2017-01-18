@@ -1,0 +1,135 @@
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<title>Attijari Bank</title>
+	.form-group: Provides optimum spacing for label / inputs
+.has-error: validation style for a error. Also has other validation states such as .has-warning, and .has-success
+.form-control: Provides formatting to <input/>, <textarea/>, and <select/> elements.
+</h:head>
+<ui:composition template="../superadmin/index.xhtml">
+	<ui:define name="body">
+		<h:body>
+			<h:form>
+				<div class="ts-main-content">
+					<div class="content-wrapper">
+						<div class="container-fluid">
+
+							<div class="row">
+								<div class="col-md-12">
+
+									<FONT color="#FF8C00" style="text-align: center;"><h2 class="page-title">Gestion Des Groupes</h2></FONT>
+
+									<!-- Zero Configuration Table -->
+									<div class="panel panel-default">
+										<div class="panel-heading">Table des Groupes</div>
+										<div class="panel-body">
+											<h:dataTable
+												class="display table table-striped table-bordered table-hover"
+												value="#{groupeBean.lister()}" var="group">
+
+												<h:column>
+													<f:facet name="header">
+	                                       ID
+	                                        </f:facet>
+	                                        #{group.idg}                   
+	                               </h:column>
+
+												<h:column>
+													<f:facet name="header">
+	                                     Nom du Groupe
+	                                        </f:facet>
+	                                        #{group.nom}                   
+	                               </h:column>
+	                               
+
+												
+
+												<h:column>
+													<f:facet name="header" class="text-center">	
+                                        Actions
+                                        </f:facet>
+													
+														
+													<h:commandButton action="#{groupeBean.supprission()}" immediate="true"
+														class="btn btn-danger btn-xs" value="Supprimer">
+														<f:setPropertyActionListener value="#{group}"
+															target="#{groupeBean.groupe}" />
+													</h:commandButton>
+													<button type="button" data-toggle="modal"
+												data-target="#myModal" style="float: right;"
+												class="btn btn-primary">
+												<span class="glyphicon glyphicon-plus"></span> Modifier
+											</button>
+												</h:column>
+
+											</h:dataTable>
+											<br></br>
+											<button type="button" data-toggle="modal"
+												data-target="#myModal" style="float: right;"
+												class="btn btn-primary">
+												<span class="glyphicon glyphicon-plus"></span> Ajouter
+											</button>
+										</div>
+									</div>
+
+									<div id="myModal" class="modal fade" tabindex="-1"
+										role="dialog" aria-labelledby="myModalLabel"
+										aria-hidden="true">
+										<div class="modal-dialog">
+											<div class="modal-content">
+												<div class="modal-body">
+													<div class="panel-body">
+														<div class="modal-body">
+															<FONT color="#FF8C00" style="text-align: center;"><h1>Ajouter Des
+																Groupes </h1></FONT>
+																<div class="form-group #{!group.valid ? 'has-error' : 'none'}">
+																<label class="col-sm-2 control-label">ID</label>
+																<BR/><h:message for="sgroup" style="color:red"/><BR/>
+													<h:inputText value="#{groupeBean.groupe.idg}"  binding="#{group}" id="sgroup" label="ID"
+																class="form-control" >
+																 <f:validateRequired />
+											 </h:inputText>
+											</div>
+																<div class="form-group #{!nomg.valid ? 'has-error' : 'none'}">
+																 <label class="col-sm-2 control-label">Nom Du Groupe</label>
+																 <BR/><h:message for="snomg" style="color:red"/><BR/>
+													<h:inputText value="#{groupeBean.groupe.nom}"  binding="#{nomg}" id="snomg" label="Nom Du Groupe"
+																class="form-control" >
+																 <f:validateRequired />
+											 </h:inputText>
+											</div>
+															<label class="col-sm-2 control-label">Privilège</label>
+															<h:selectOneMenu value="#{groupeBean.nomprivilege}"
+																class="form-control col-md-push-5">
+																<f:selectItems value="#{privilegeBean.allprivilege}" />
+															</h:selectOneMenu>
+														</div>
+
+
+													</div>
+													<div class="modal-footer">
+														<h:commandButton type="submit" class="btn btn-success"
+															action="#{groupeBean.ajout()}" value="Enregistrer" />
+														<h:commandButton type="reset" class="btn btn-default"
+														action="gestiongroupes.xhtml"	value="Cancel" />
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+
+			</h:form>
+		</h:body>
+	</ui:define>
+</ui:composition>
+</html>

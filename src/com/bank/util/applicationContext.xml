@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
+
+
+	<bean id="groupeDao" class="com.bank.dao.imp.GroupeDaoImp"></bean>
+	<bean id="groupeService" class="com.bank.services.imp.GroupeServiceImp">
+		<property name="group" ref="groupeDao"></property>
+	</bean>
+	<bean id="armoireDao" class="com.bank.dao.imp.ArmoireDaoImp"></bean>
+	<bean id="armoireService" class="com.bank.services.imp.ArmoireServiceImp">
+		<property name="armoire" ref="armoireDao"></property>
+	</bean>
+	<bean id="datacenterDao" class="com.bank.dao.imp.DatacenterDaoImp"></bean>
+	<bean id="datacenterService" class="com.bank.services.imp.DatacenterServiceImp">
+		<property name="datacenter" ref="datacenterDao"></property>
+	</bean>
+	<bean id="dictionnaireDao" class="com.bank.dao.imp.DictionnaireDaoImp"></bean>
+	<bean id="dictionnaireService" class="com.bank.services.imp.DictionnaireServiceImp">
+		<property name="dictionnaire" ref="dictionnaireDao"></property>
+	</bean>
+	<bean id="equipementelecDao"
+		class="com.bank.dao.imp.EquipementElectriqueDaoImp"></bean>
+	<bean id="equipementelecService" class="com.bank.services.imp.EquipementElectriqueServiceImp">
+		<property name="eqe" ref="equipementelecDao"></property>
+	</bean>
+	<bean id="equipemtinfiDao"
+		class="com.bank.dao.imp.EquipementinformatiqueImp"></bean>
+	<bean id="equipementinfService" class="com.bank.services.imp.EquipementInformatiqueServiceImp">
+		<property name="eqi" ref="equipemtinfiDao"></property>
+	</bean>
+	<bean id="equipementresDao"
+		class="com.bank.dao.imp.EquipementReseauDaoImp"></bean>
+	<bean id="equipementresService" class="com.bank.services.imp.EquipementResauServiceImp">
+		<property name="eqr" ref="equipementresDao"></property>
+	</bean>
+	<bean id="historiqueDao" class="com.bank.dao.imp.HistoriqueDaoImp"></bean>
+	<bean id="historiqueService" class="com.bank.services.imp.HistoriqueServiceImp">
+		<property name="hist" ref="historiqueDao"></property>
+	</bean>
+	<bean id="privilegeDao" class="com.bank.dao.imp.PrivilegeDaoImp"></bean>
+	<bean id="privilegeService" class="com.bank.services.imp.PrivilegeServiceImp">
+		<property name="privilege" ref="privilegeDao"></property>
+	</bean>
+	<bean id="regleDao" class="com.bank.dao.imp.RegleDaoImp"></bean>
+	<bean id="regleService" class="com.bank.services.imp.RegleServiceImp">
+		<property name="regle" ref="regleDao"></property>
+	</bean>
+	<bean id="utilisateurDao" class="com.bank.dao.imp.UtilisateurDaoImp"></bean>
+	<bean id="utilisateurService" class="com.bank.services.imp.UtilisateurServiceImp">
+		<property name="uti" ref="utilisateurDao"></property>
+	</bean>
+
+</beans>

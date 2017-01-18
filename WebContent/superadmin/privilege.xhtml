@@ -1,0 +1,132 @@
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<title>Attijari Bank</title>
+	.form-group: Provides optimum spacing for label / inputs
+.has-error: validation style for a error. Also has other validation states such as .has-warning, and .has-success
+.form-control: Provides formatting to <input/>, <textarea/>, and <select/> elements.
+</h:head>
+<ui:composition template="../superadmin/index.xhtml">
+	<ui:define name="body">
+		<h:body>
+
+
+			<h:form>
+				<div class="ts-main-content">
+					<div class="content-wrapper">
+						<div class="container-fluid">
+
+							<div class="row">
+								<div class="col-md-12">
+
+									<FONT color="#FF8C00" style="text-align: center;"><h2 class="page-title">Privelege</h2></FONT>
+
+									<!-- Zero Configuration Table -->
+									<div class="panel panel-default">
+										<div class="panel-heading">Table Des Privilèges</div>
+										<div class="panel-body">
+											<h:dataTable
+												class="display table table-striped table-bordered table-hover"
+												value="#{privilegeBean.lister()}" var="privilege">
+
+												<h:column>
+													<f:facet name="header">
+	                                       ID
+	                                        </f:facet>
+	                                        #{privilege.idprivilege}                   
+	                               </h:column>
+
+												<h:column>
+													<f:facet name="header">
+	                                     Nom
+	                                        </f:facet>
+	                                        #{privilege.nom}                   
+	                               </h:column>
+
+												<h:column>
+													<f:facet name="header" class="text-center">	
+                                        Actions
+                                        </f:facet>
+													<h:commandButton
+														action="#{privilegeBean.supprission()}" 
+														class="btn btn-danger btn-xs" value="Supprimer" immediate="true"><f:setPropertyActionListener value="#{privilege}" target="#{privilegeBean.privilege}" /></h:commandButton>
+												<button type="button" data-toggle="modal"
+												data-target="#myModal" style="float: right;"
+												class="btn btn-primary">
+												<span class="glyphicon glyphicon-plus"></span> Modifier
+											</button>
+												</h:column>
+											
+                                               
+											</h:dataTable>
+											<br></br>
+											<button type="button" data-toggle="modal" data-target="#myModal" style="float:right;" class="btn btn-primary">
+				                    <span class="glyphicon glyphicon-plus"></span> Ajouter
+				                </button>
+										</div>
+									</div>
+
+									<div id="myModal" class="modal fade" tabindex="-1"
+										role="dialog" aria-labelledby="myModalLabel"
+										aria-hidden="true">
+										<div class="modal-dialog">
+											<div class="modal-content">
+												<div class="modal-body">
+													<div class="panel-body">
+														<div class="modal-body">
+															<FONT color="#FF8C00" style="text-align: center;"><h1>Ajouter Des
+																Privilèges </h1></FONT>
+															<div class="form-group #{!priv.valid ? 'has-error' : 'none'}">	
+															<label class="col-sm-2 control-label">Id</label> 
+															<BR/><h:message for="spriv" style="color:red"/><BR/>
+															<h:inputText value="#{privilegeBean.privilege.idprivilege}"
+																binding="#{priv}" id="spriv" class="form-control" >
+																 <f:validateRequired />
+											 </h:inputText>
+											</div>
+																<div class="form-group #{!nom.valid ? 'has-error' : 'none'}">
+															<label class="col-sm-2 control-label">Nom</label> 
+															<BR/><h:message for="snom" style="color:red"/><BR/>
+															<h:inputText value="#{privilegeBean.privilege.nom}" binding="#{nom}" id="snom"
+																class="form-control" >
+																 <f:validateRequired />
+											 </h:inputText>
+											</div>
+															
+																<label class="col-sm-2 control-label">Acces</label>
+															<h:selectOneMenu value="#{privilegeBean.privilege.accessprivilege}"
+																class="form-control col-md-push-5" >
+																<f:selectItem itemValue="ROLE_Consultation" />
+																<f:selectItem itemValue="ROLE_Gestionarmoiresetequipements" />
+																<f:selectItem itemValue="ROLE_Parametres" />
+																
+															</h:selectOneMenu>
+																		
+																</div>
+
+														
+														</div>
+														<div class="modal-footer">
+											<h:commandButton type="submit" class="btn btn-success" action="#{privilegeBean.ajout()}" value="Enregistere"/>
+									        <h:commandButton type="reset" class="btn btn-default" action="privilege.xhtml" value="Cancel"/>
+						      			</div>	
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								</div>
+
+						</div>
+					</div>
+				
+			</h:form>
+		</h:body>
+	</ui:define>
+</ui:composition>
+</html>

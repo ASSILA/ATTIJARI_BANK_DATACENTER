@@ -1,0 +1,88 @@
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<title>Attijari Bank</title>
+</h:head>
+<ui:composition template="../user/index.xhtml">
+	<ui:define name="body">
+		<h:body>
+		<h:form>
+				<div class="ts-main-content">
+					<div class="content-wrapper">
+						<div class="container-fluid">
+
+							<div class="row">
+								<div class="col-md-12">
+
+									<FONT color="#FF8C00" style="text-align: center;"><h1>Consulter Les Équipements avec Snmp
+																 </h1></FONT>
+
+									<!-- Zero Configuration Table -->
+									<div class="panel panel-default">
+										<div class="panel-heading">Verifier l'Etat de L'Équipement avec le protocole SNMP</div>
+										<div class="panel-body">
+                                          
+                                             <div
+												class="form-group #{!adress.valid ? 'has-error' : 'none'}">
+												<label class="col-sm-2 control-label">Adresse IP</label>
+												<h:message for="adress" style="color:red" />
+
+
+												<h:inputText value="#{snmpBean.strIPAddress}"
+													binding="#{adress}" id="sadress" label="Adresse IP"
+													class="form-control">
+													<f:validateRequired />
+												</h:inputText>
+											</div>
+												<label class="col-sm-2 control-label">Les Oids</label>
+											<h:selectOneMenu value="#{snmpBean.oid}"
+												class="form-control col-md-push-5">
+												<f:selectItems value="#{snmpBean.alloid}" />
+											</h:selectOneMenu>
+												<h:commandButton type="submit" class="btn btn-success" style="float: right;"
+															actionListener="#{snmpBean.afficher()}" value="Afficher" />
+										
+										<p>
+										<BR />
+							           Snmp Get
+										<h:outputText value="#{snmpBean.datos1}" />
+									   <BR />
+									  </p>
+									  <p>
+										Snmp GetNext
+										<h:outputText value="#{snmpBean.datos2}" />
+									<BR />
+									</p>
+									<p>
+										 Snmp Next OID
+										<h:outputText value="#{snmpBean.datos3}" />
+									</p>
+										</div>	
+										</div>
+									</div>
+
+									
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+
+			</h:form>
+
+
+
+		
+												
+		
+
+		
+		
+		</h:body>
+		</ui:define>
+		</ui:composition>
+		</html>

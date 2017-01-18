@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:*" PATH="*" SHAPE="80,464,53,362" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:*:0" NAME="item" PATH="*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="ConsulterArmoire::#user#ConsulterArmoire.xhtml" NAME="output"
+    PATH="/user/ConsulterArmoire.xhtml"
+    TARGET="rules:#user#ConsulterArmoire.xhtml" TITLE="ConsulterArmoire" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="consulterdatacenter::#user#consulterdatacenter.xhtml"
+    NAME="output1" PATH="/user/consulterdatacenter.xhtml"
+    TARGET="rules:#user#consulterdatacenter.xhtml"
+    TITLE="consulterdatacenter" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="ConsulterEquipementelec::#user#ConsulterEquipementelec.xhtml"
+    NAME="output2" PATH="/user/ConsulterEquipementelec.xhtml"
+    TARGET="rules:#user#ConsulterEquipementelec.xhtml"
+    TITLE="ConsulterEquipementelec" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="ConsulterEquipementinfo::#user#ConsulterEquipementinfo.xhtml"
+    NAME="output3" PATH="/user/ConsulterEquipementinfo.xhtml"
+    TARGET="rules:#user#ConsulterEquipementinfo.xhtml"
+    TITLE="ConsulterEquipementinfo" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="ConsulterEquipementres::#user#ConsulterEquipementres.xhtml"
+    NAME="output4" PATH="/user/ConsulterEquipementres.xhtml"
+    TARGET="rules:#user#ConsulterEquipementres.xhtml"
+    TITLE="ConsulterEquipementres" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="ConsulterArmoire::#admin#ConsulterArmoire.xhtml" NAME="output6"
+    PATH="/admin/ConsulterArmoire.xhtml"
+    TARGET="rules:#admin#ConsulterArmoire.xhtml"
+    TITLE="ConsulterArmoire" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="consulterdatacenter::#admin#consulterdatacenter.xhtml"
+    NAME="output7" PATH="/admin/consulterdatacenter.xhtml"
+    TARGET="rules:#admin#consulterdatacenter.xhtml"
+    TITLE="consulterdatacenter" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="ConsulterEquipementelec::#admin#ConsulterEquipementelec.xhtml"
+    NAME="output8" PATH="/admin/ConsulterEquipementelec.xhtml"
+    TARGET="rules:#admin#ConsulterEquipementelec.xhtml"
+    TITLE="ConsulterEquipementelec" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="ConsulterEquipementinfo::#admin#ConsulterEquipementinfo.xhtml"
+    NAME="output9" PATH="/admin/ConsulterEquipementinfo.xhtml"
+    TARGET="rules:#admin#ConsulterEquipementinfo.xhtml"
+    TITLE="ConsulterEquipementinfo" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="ConsulterEquipementres::#admin#ConsulterEquipementres.xhtml"
+    NAME="output10" PATH="/admin/ConsulterEquipementres.xhtml"
+    TARGET="rules:#admin#ConsulterEquipementres.xhtml"
+    TITLE="ConsulterEquipementres" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="privilege::#admin#privilege.xhtml"
+    NAME="output11" PATH="/admin/privilege.xhtml"
+    TARGET="rules:#admin#privilege.xhtml" TITLE="privilege" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="gestionequipement::#admin#gestionequipement.xhtml"
+    NAME="output12" PATH="/admin/gestionequipement.xhtml"
+    TARGET="rules:#admin#gestionequipement.xhtml"
+    TITLE="gestionequipement" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="gestiondatacenter::#admin#gestiondatacenter.xhtml"
+    NAME="output13" PATH="/admin/gestiondatacenter.xhtml"
+    TARGET="rules:#admin#gestiondatacenter.xhtml"
+    TITLE="gestiondatacenter" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="gestionequipementinfo::#admin#gestionequipementinfo.xhtml"
+    NAME="output14" PATH="/admin/gestionequipementinfo.xhtml"
+    TARGET="rules:#admin#gestionequipementinfo.xhtml"
+    TITLE="gestionequipementinfo" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="Regledecontrole::#admin#Regledecontrole.xhtml" NAME="output15"
+    PATH="/admin/Regledecontrole.xhtml"
+    TARGET="rules:#admin#Regledecontrole.xhtml" TITLE="Regledecontrole" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="utilisateur::#admin#utilisateur.xhtml"
+    NAME="output16" PATH="/admin/utilisateur.xhtml"
+    TARGET="rules:#admin#utilisateur.xhtml" TITLE="utilisateur" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="histoire::#admin#histoire.xhtml"
+    NAME="output17" PATH="/admin/histoire.xhtml"
+    TARGET="rules:#admin#histoire.xhtml" TITLE="histoire" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="gestiongroupes::#admin#gestiongroupes.xhtml"
+    NAME="output18" PATH="/admin/gestiongroupes.xhtml"
+    TARGET="rules:#admin#gestiongroupes.xhtml" TITLE="gestiongroupes" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="gestionequipementelec::#admin#gestionequipementelec.xhtml"
+    NAME="output19" PATH="/admin/gestionequipementelec.xhtml"
+    TARGET="rules:#admin#gestionequipementelec.xhtml"
+    TITLE="gestionequipementelec" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="Dictionnaire::#admin#Dictionnaire.xhtml"
+    NAME="output20" PATH="/admin/Dictionnaire.xhtml"
+    TARGET="rules:#admin#Dictionnaire.xhtml" TITLE="Dictionnaire" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="gestionarmoire::#admin#gestionarmoire.xhtml"
+    NAME="output21" PATH="/admin/gestionarmoire.xhtml"
+    TARGET="rules:#admin#gestionarmoire.xhtml" TITLE="gestionarmoire" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="ConsulterEquipementres::#superadmin#ConsulterEquipementres.xhtml"
+    NAME="output22" PATH="/superadmin/ConsulterEquipementres.xhtml"
+    TARGET="rules:#superadmin#ConsulterEquipementres.xhtml"
+    TITLE="ConsulterEquipementres" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="utilisateur::#superadmin#utilisateur.xhtml"
+    NAME="output23" PATH="/superadmin/utilisateur.xhtml"
+    TARGET="rules:#superadmin#utilisateur.xhtml" TITLE="utilisateur" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="ConsulterArmoire::#superadmin#ConsulterArmoire.xhtml"
+    NAME="output24" PATH="/superadmin/ConsulterArmoire.xhtml"
+    TARGET="rules:#superadmin#ConsulterArmoire.xhtml"
+    TITLE="ConsulterArmoire" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="index::#user#index.xhtml" NAME="output25"
+    PATH="/user/index.xhtml" TARGET="rules:#user#index.xhtml"
+    TITLE="index" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="ConsulterEquipementinfo::#superadmin#ConsulterEquipementinfo.xhtml"
+    NAME="output26" PATH="/superadmin/ConsulterEquipementinfo.xhtml"
+    TARGET="rules:#superadmin#ConsulterEquipementinfo.xhtml"
+    TITLE="ConsulterEquipementinfo" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="consulterdatacenter::#superadmin#consulterdatacenter.xhtml"
+    NAME="output27" PATH="/superadmin/consulterdatacenter.xhtml"
+    TARGET="rules:#superadmin#consulterdatacenter.xhtml"
+    TITLE="consulterdatacenter" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="ConsulterEquipementelec::#superadmin#ConsulterEquipementelec.xhtml"
+    NAME="output28" PATH="/superadmin/ConsulterEquipementelec.xhtml"
+    TARGET="rules:#superadmin#ConsulterEquipementelec.xhtml"
+    TITLE="ConsulterEquipementelec" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="gestionequipement::#superadmin#gestionequipement.xhtml"
+    NAME="output29" PATH="/superadmin/gestionequipement.xhtml"
+    TARGET="rules:#superadmin#gestionequipement.xhtml"
+    TITLE="gestionequipement" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="gestionarmoire::#superadmin#gestionarmoire.xhtml"
+    NAME="output30" PATH="/superadmin/gestionarmoire.xhtml"
+    TARGET="rules:#superadmin#gestionarmoire.xhtml"
+    TITLE="gestionarmoire" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="Dictionnaire::#superadmin#Dictionnaire.xhtml" NAME="output31"
+    PATH="/superadmin/Dictionnaire.xhtml"
+    TARGET="rules:#superadmin#Dictionnaire.xhtml" TITLE="Dictionnaire" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="index::#superadmin#index.xhtml"
+    NAME="output32" PATH="/superadmin/index.xhtml"
+    TARGET="rules:#superadmin#index.xhtml" TITLE="index" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="index::#admin#index.xhtml" NAME="output33"
+    PATH="/admin/index.xhtml" TARGET="rules:#admin#index.xhtml"
+    TITLE="index" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="splunk::#superadmin#splunk.xhtml"
+    NAME="output34" PATH="/superadmin/splunk.xhtml"
+    TARGET="rules:#superadmin#splunk.xhtml" TITLE="splunk" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="Regledecontrole::#superadmin#Regledecontrole.xhtml"
+    NAME="output35" PATH="/superadmin/Regledecontrole.xhtml"
+    TARGET="rules:#superadmin#Regledecontrole.xhtml"
+    TITLE="Regledecontrole" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="histoire::#superadmin#histoire.xhtml"
+    NAME="output36" PATH="/superadmin/histoire.xhtml"
+    TARGET="rules:#superadmin#histoire.xhtml" TITLE="histoire" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="gestiondatacenter::#superadmin#gestiondatacenter.xhtml"
+    NAME="output37" PATH="/superadmin/gestiondatacenter.xhtml"
+    TARGET="rules:#superadmin#gestiondatacenter.xhtml"
+    TITLE="gestiondatacenter" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="gestiongroupes::#superadmin#gestiongroupes.xhtml"
+    NAME="output38" PATH="/superadmin/gestiongroupes.xhtml"
+    TARGET="rules:#superadmin#gestiongroupes.xhtml"
+    TITLE="gestiongroupes" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="gestionequipementinfo::#superadmin#gestionequipementinfo.xhtml"
+    NAME="output39" PATH="/superadmin/gestionequipementinfo.xhtml"
+    TARGET="rules:#superadmin#gestionequipementinfo.xhtml"
+    TITLE="gestionequipementinfo" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="gestionequipementelec::#superadmin#gestionequipementelec.xhtml"
+    NAME="output40" PATH="/superadmin/gestionequipementelec.xhtml"
+    TARGET="rules:#superadmin#gestionequipementelec.xhtml"
+    TITLE="gestionequipementelec" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="privilege::#superadmin#privilege.xhtml"
+    NAME="output41" PATH="/superadmin/privilege.xhtml"
+    TARGET="rules:#superadmin#privilege.xhtml" TITLE="privilege" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#user#ConsulterArmoire.xhtml"
+  PATH="/user/ConsulterArmoire.xhtml" SHAPE="672,16,50,25"
+  model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#user#consulterdatacenter.xhtml"
+  PATH="/user/consulterdatacenter.xhtml" SHAPE="752,32,50,25"
+  model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#user#ConsulterEquipementelec.xhtml"
+  PATH="/user/ConsulterEquipementelec.xhtml" SHAPE="808,48,50,25"
+  model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#user#ConsulterEquipementinfo.xhtml"
+  PATH="/user/ConsulterEquipementinfo.xhtml" SHAPE="872,72,50,25"
+  model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#user#ConsulterEquipementres.xhtml"
+  PATH="/user/ConsulterEquipementres.xhtml" SHAPE="936,88,50,25" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#user#splunk.xhtml" PATH="/user/splunk.xhtml"
+  SHAPE="992,112,50,25" model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#admin#ConsulterArmoire.xhtml"
+  PATH="/admin/ConsulterArmoire.xhtml" SHAPE="1152,1000,50,25"
+  model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#admin#consulterdatacenter.xhtml"
+  PATH="/admin/consulterdatacenter.xhtml" SHAPE="1256,1024,50,25"
+  model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#admin#ConsulterEquipementelec.xhtml"
+  PATH="/admin/ConsulterEquipementelec.xhtml" SHAPE="1320,1064,50,25"
+  model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#admin#ConsulterEquipementinfo.xhtml"
+  PATH="/admin/ConsulterEquipementinfo.xhtml" SHAPE="1096,1096,50,25"
+  model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#admin#ConsulterEquipementres.xhtml"
+  PATH="/admin/ConsulterEquipementres.xhtml" SHAPE="888,1272,50,25"
+  model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#admin#Dictionnaire.xhtml"
+  PATH="/admin/Dictionnaire.xhtml" SHAPE="264,1280,50,25"
+  model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#admin#gestionarmoire.xhtml"
+  PATH="/admin/gestionarmoire.xhtml" SHAPE="16,1296,50,25"
+  model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#admin#gestiondatacenter.xhtml"
+  PATH="/admin/gestiondatacenter.xhtml" SHAPE="792,1248,50,25"
+  model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#admin#gestionequipement.xhtml"
+  PATH="/admin/gestionequipement.xhtml" SHAPE="1272,1184,50,25"
+  model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#admin#gestionequipementelec.xhtml"
+  PATH="/admin/gestionequipementelec.xhtml" SHAPE="504,1224,50,25"
+  model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#admin#gestionequipementinfo.xhtml"
+  PATH="/admin/gestionequipementinfo.xhtml" SHAPE="24,1240,50,25"
+  model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#admin#gestiongroupes.xhtml"
+  PATH="/admin/gestiongroupes.xhtml" SHAPE="760,1168,50,25"
+  model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#admin#histoire.xhtml"
+  PATH="/admin/histoire.xhtml" SHAPE="224,1328,50,25"
+  model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#admin#privilege.xhtml"
+  PATH="/admin/privilege.xhtml" SHAPE="1288,1120,50,25"
+  model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#admin#Regledecontrole.xhtml"
+  PATH="/admin/Regledecontrole.xhtml" SHAPE="1096,1152,50,25"
+  model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#admin#utilisateur.xhtml"
+  PATH="/admin/utilisateur.xhtml" SHAPE="1104,1208,50,25"
+  model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#superadmin#ConsulterArmoire.xhtml"
+  PATH="/superadmin/ConsulterArmoire.xhtml" SHAPE="1040,136,50,25"
+  model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#superadmin#consulterdatacenter.xhtml"
+  PATH="/superadmin/consulterdatacenter.xhtml" SHAPE="1144,192,50,25"
+  model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#superadmin#ConsulterEquipementelec.xhtml"
+  PATH="/superadmin/ConsulterEquipementelec.xhtml"
+  SHAPE="1136,288,50,25" model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#superadmin#ConsulterEquipementinfo.xhtml"
+  PATH="/superadmin/ConsulterEquipementinfo.xhtml"
+  SHAPE="1136,232,50,25" model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#superadmin#ConsulterEquipementres.xhtml"
+  PATH="/superadmin/ConsulterEquipementres.xhtml" SHAPE="1136,336,50,25"
+  model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#superadmin#Dictionnaire.xhtml"
+  PATH="/superadmin/Dictionnaire.xhtml" SHAPE="1176,512,50,25"
+  model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#superadmin#gestionarmoire.xhtml"
+  PATH="/superadmin/gestionarmoire.xhtml" SHAPE="1184,464,50,25"
+  model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#superadmin#gestionequipement.xhtml"
+  PATH="/superadmin/gestionequipement.xhtml" SHAPE="1160,416,50,25"
+  model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#superadmin#utilisateur.xhtml"
+  PATH="/superadmin/utilisateur.xhtml" SHAPE="1096,376,50,25"
+  model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#superadmin#gestiondatacenter.xhtml"
+  PATH="/superadmin/gestiondatacenter.xhtml" SHAPE="1184,608,50,25"
+  model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#superadmin#gestiongroupes.xhtml"
+  PATH="/superadmin/gestiongroupes.xhtml" SHAPE="1184,656,50,25"
+  model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#superadmin#gestionequipementinfo.xhtml"
+  PATH="/superadmin/gestionequipementinfo.xhtml" SHAPE="1184,792,50,25"
+  model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#superadmin#gestionequipementelec.xhtml"
+  PATH="/superadmin/gestionequipementelec.xhtml" SHAPE="1160,888,50,25"
+  model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#superadmin#histoire.xhtml"
+  PATH="/superadmin/histoire.xhtml" SHAPE="1216,920,50,25"
+  model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#superadmin#privilege.xhtml"
+  PATH="/superadmin/privilege.xhtml" SHAPE="1064,960,50,25"
+  model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#superadmin#Regledecontrole.xhtml"
+  PATH="/superadmin/Regledecontrole.xhtml" SHAPE="1176,840,50,25"
+  model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#superadmin#splunk.xhtml"
+  PATH="/superadmin/splunk.xhtml" SHAPE="1184,744,50,25"
+  model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#superadmin#index.xhtml"
+  PATH="/superadmin/index.xhtml" SHAPE="1176,560,50,25"
+  model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#admin#index.xhtml" PATH="/admin/index.xhtml"
+  SHAPE="1176,704,50,25" model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#user#index.xhtml" PATH="/user/index.xhtml"
+  SHAPE="1088,160,50,25" model-entity="JSFProcessGroup" persistent="true"/>
+</PROCESS>

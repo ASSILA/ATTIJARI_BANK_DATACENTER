@@ -1,0 +1,264 @@
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<title>Attijari Bank</title>
+	.form-group: Provides optimum spacing for label / inputs
+.has-error: validation style for a error. Also has other validation states such as .has-warning, and .has-success
+.form-control: Provides formatting to <input />, <textarea />, and <select /> elements.
+</h:head>
+<ui:composition template="../superadmin/index.xhtml">
+	<ui:define name="body">
+		<h:body>
+			<h:form>
+				<div class="ts-main-content">
+					<div class="content-wrapper">
+						<div class="container-fluid">
+
+							<div class="row">
+								<div class="col-md-12">
+
+									<FONT color="#FF8C00" style="text-align: center;"><h2 class="page-title">Gestion Des Utilisateurs</h2> </FONT>
+									<!-- Zero Configuration Table -->
+									<div class="panel panel-default">
+										<div class="panel-heading">Table Des Utilisateurs</div>
+										<div class="panel-body">
+											<h:dataTable
+												class="display table table-striped table-bordered table-hover"
+												value="#{utilBeans.lister()}" var="uti">
+
+												<h:column>
+													<f:facet name="header">
+	                                       ID
+	                                        </f:facet>
+	                                        #{uti.id}  
+	                               </h:column>
+												<h:column>
+													<f:facet name="header">
+	                                      Nom
+	                                        </f:facet>
+	                                        #{uti.username}                     
+	                               </h:column>
+												<h:column>
+													<f:facet name="header">
+	                                   Prénom
+	                                        </f:facet>
+	                                        #{uti.prenom}             
+	                               </h:column>
+												<h:column>
+													<f:facet name="header">
+	                                       Email
+	                                        </f:facet>
+	                                        #{uti.email}          
+	                               </h:column>
+												<h:column>
+													<f:facet name="header">
+	                                       Fonction
+	                                        </f:facet>
+	                                        #{uti.fonction}           
+	                               </h:column>
+												<h:column>
+													<f:facet name="header">
+	                                       Matricule
+	                                        </f:facet>
+	                                        #{uti.matricule}       
+	                               </h:column>
+												<h:column>
+													<f:facet name="header">
+	                                      Mot de passe
+	                                        </f:facet>
+	                                        #{uti.password}       
+	                               </h:column>
+												<h:column>
+													<f:facet name="header">
+	                                       Tel
+	                                        </f:facet>
+	                                        #{uti.tel}            
+	                               </h:column>
+
+
+
+												<h:column>
+													<f:facet name="header" class="text-center">	
+                                        Actions
+                                        </f:facet>
+													<h:commandButton action="#{utilBeans.supprimerUserss()}" 
+														class="btn btn-danger btn-xs" value="Supprimer" immediate="true">
+														<f:setPropertyActionListener value="#{uti}"
+															target="#{utilBeans.users}" />
+													</h:commandButton>
+													<button type="button" data-toggle="modal"
+														data-target="#myModal" style="float: right;"
+														class="btn btn-primary">
+														<span class="glyphicon glyphicon-plus"></span> Modifier
+													</button>
+												</h:column>
+
+											</h:dataTable>
+
+
+											<br></br>
+											<button type="button" data-toggle="modal"
+												data-target="#myModal" style="float: right;"
+												class="btn btn-primary">
+												<span class="glyphicon glyphicon-plus"></span> Ajouter
+											</button>
+										</div>
+									</div>
+
+									<div id="myModal" class="modal fade" tabindex="-1"
+										role="dialog" aria-labelledby="myModalLabel"
+										aria-hidden="true">
+										<div class="modal-dialog">
+											<div class="modal-content">
+												<div class="modal-body">
+													<div class="panel-body">
+														<div class="modal-body">
+
+															<FONT color="#FF8C00" style="text-align: center;"><h1>Ajouter
+																	Des Utilisateurs</h1></FONT>
+
+															<div
+																class="form-group #{!uti.valid ? 'has-error' : 'none'}">
+																<label class="col-sm-2 control-label">Id</label> <BR />
+																<h:message for="suti" style="color:red" />
+																<BR />
+																<h:inputText value="#{utilBeans.users.id}"
+																	binding="#{uti}" id="suti" label="Id"
+																	class="form-control">
+																	<f:validateRequired />
+																</h:inputText>
+															</div>
+															<div
+																class="form-group #{!nom.valid ? 'has-error' : 'none'}">
+																<label class="col-sm-2 control-label">Nom</label> <BR />
+																<h:message for="snom" style="color:red" />
+																<BR />
+																<h:inputText value="#{utilBeans.users.username}"
+																	binding="#{nom}" id="snom" label="Nom"
+																	class="form-control">
+																	<f:validateRequired />
+																</h:inputText>
+															</div>
+															<div
+																class="form-group #{!prenom.valid ? 'has-error' : 'none'}">
+																<label class="col-sm-2 control-label">Prénom</label> <BR />
+																<h:message for="sprenom" style="color:red" />
+																<BR />
+																<h:inputText value="#{utilBeans.users.prenom}"
+																	binding="#{prenom}" id="sprenom" label="Prénom"
+																	class="form-control">
+																	<f:validateRequired />
+																</h:inputText>
+															</div>
+															<div
+																class="form-group #{!email.valid ? 'has-error' : 'none'}">
+																<label class="col-sm-2 control-label">Email</label> <BR />
+																<h:message for="semail" style="color:red" />
+																<BR />
+																<h:inputText value="#{utilBeans.users.email}"
+																	binding="#{email}" id="semail" label="Email"
+																	class="form-control">
+																	<f:validateRequired />
+																</h:inputText>
+															</div>
+															<div
+																class="form-group #{!fonction.valid ? 'has-error' : 'none'}">
+																<label class="col-sm-2 control-label">Fonction</label> <BR />
+																<h:message for="sfonction" style="color:red" />
+																<BR />
+																<h:inputText binding="#{fonction}" id="sfonction"
+																	label="Fonction" value="#{utilBeans.users.fonction}" 
+																	class="form-control">
+																	<f:validateRequired />
+																</h:inputText>
+															</div>
+															<div
+																class="form-group #{!matri.valid ? 'has-error' : 'none'}">
+																<label class="col-sm-2 control-label">Matricule</label>
+																<BR />
+																<h:message for="smatri" style="color:red" />
+																<BR />
+																<h:inputText value="#{utilBeans.users.matricule}"
+																	binding="#{matri}" id="smatri" label="Matricule"
+																	class="form-control">
+																	<f:validateRequired />
+																</h:inputText>
+															</div>
+															<div
+																class="form-group #{!mot.valid ? 'has-error' : 'none'}">
+																<label class="col-sm-2 control-label">Mot de
+																	Passe</label><BR />
+																<h:message for="smot" style="color:red" />
+																<BR />
+																<h:inputText value="#{utilBeans.users.password}"
+																	binding="#{mot}" id="smot" label="Mot de passe"
+																	class="form-control">
+																	<f:validateRequired />
+																</h:inputText>
+															</div>
+															<div
+																class="form-group #{!tel.valid ? 'has-error' : 'none'}">
+																<label class="col-sm-2 control-label">Tel </label><BR />
+																<h:message for="stel" style="color:red" />
+																<BR />
+																<h:inputText value="#{utilBeans.users.tel}"
+																	binding="#{tel}" id="stel" label="Tel"
+																	class="form-control">
+																	<f:validateRequired />
+																</h:inputText>
+															</div>
+
+															<div
+																class="form-group #{!activ.valid ? 'has-error' : 'none'}">
+																<label class="col-sm-2 control-label">Activée</label> <BR />
+																<h:message for="sactiv" style="color:red" />
+																<BR />
+																<h:inputText binding="#{activ}" id="saction"
+																	label="Activée" value="#{utilBeans.users.enabled}"
+																	class="form-control">
+																	<f:validateRequired />
+																</h:inputText>
+															</div>
+
+															<label class="col-sm-2 control-label">Groupe</label>
+
+
+
+															<h:selectOneMenu value="#{utilBeans.nomgroupe}"
+																class="form-control col-md-push-5">
+																<f:selectItems value="#{groupeBean.allgroupe}" />
+															</h:selectOneMenu>
+
+
+														</div>
+
+
+													</div>
+													<div class="modal-footer">
+														<h:commandButton type="submit" class="btn btn-success"
+															actionListener="#{utilBeans.ajouterUsers()}"
+															value="Enregistrer" />
+														<h:commandButton type="reset" class="btn btn-default"
+															value="Cancel" action="utilisateur" />
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+				
+
+			</h:form>
+		</h:body>
+	</ui:define>
+</ui:composition>
+</html>

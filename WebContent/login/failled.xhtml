@@ -1,0 +1,87 @@
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+
+<h:head>
+	<meta charset="UTF-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
+	<meta name="description" content=""/>
+	<meta name="author" content=""/>
+
+	<title>Attijari Bank.com</title>
+
+	
+	<link href="../res/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+
+	<link rel="stylesheet" href="../res/css/bootstrap.min.css"/>
+
+	<link rel="stylesheet" href="../res/css/dataTables.bootstrap.min.css"/>
+
+	<link rel="stylesheet" href="../res/css/bootstrap-social.css"/>
+
+	<link rel="stylesheet" href="../res/css/bootstrap-select.css"/>
+
+	<link rel="stylesheet" href="../res/css/fileinput.min.css"/>
+
+	<link rel="stylesheet" href="../res/css/awesome-bootstrap-checkbox.css"/>
+
+	<link rel="stylesheet" href="../res/css/style.css"/>
+
+
+</h:head>
+
+<h:body>
+	
+	<div class="login-page bk-img" style="background-image: url(../res/img/background-473805_960_720.jpg);">
+		<div class="form-content">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3">
+						<h1 class="text-center text-bold text-light mt-4x">Application De Gestion Des Datacenters</h1>
+						<div class="well row pt-2x pb-3x bk-light">
+							<div class="col-md-8 col-md-offset-2">
+<!-- 							<form action="../admin/index.xhtml" class="mt" method="post" > -->
+                                <form method="post" action="../j_spring_security_check"  class="mt" >
+									<label for="" class="text-uppercase text-sm">Identifiant</label>
+									<h:inputText id="j_username" a:placeholder="Identifiant" class="form-control mb"/>
+
+									<label for="" class="text-uppercase text-sm">Mot de Passe</label>
+									<h:inputSecret id="j_password" class="form-control mb" a:placeholder="Mot de Passe"/>
+										<h:outputText value="failled" />									
+									<div class="button-login">
+								<button type="submit" class="btn btn-primary">Se
+									connecter</button>
+
+								<a href="login.xhtml">Cancel</a>
+								<div class="clearfix"></div>
+						</div>
+									
+
+								</form>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Loading Scripts -->
+	<script src="../res/js/jquery.min.js"></script>
+	<script src="../res/js/bootstrap-select.min.js"></script>
+	<script src="../res/js/bootstrap.min.js"></script>
+	<script src="../res/js/jquery.dataTables.min.js"></script>
+	<script src="../res/js/dataTables.bootstrap.min.js"></script>
+	<script src="../res/js/Chart.min.js"></script>
+	<script src="../res/js/fileinput.js"></script>
+	<script src="../res/js/chartData.js"></script>
+	<script src="../res/js/main.js"></script>
+
+</h:body>
+
+</html>

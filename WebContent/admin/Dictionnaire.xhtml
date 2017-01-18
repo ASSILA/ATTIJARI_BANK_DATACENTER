@@ -1,0 +1,79 @@
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<title>Attijari Bank</title>
+</h:head>
+<ui:composition template="../admin/index.xhtml">
+	<ui:define name="body">
+		<h:body>
+		
+		<h:form>
+				<div class="ts-main-content">
+					<div class="content-wrapper">
+						<div class="container-fluid">
+
+							<div class="row">
+								<div class="col-md-12">
+
+									<FONT color="#FF8C00" style="text-align: center;"><h2 class="page-title">Dictionnaire SNMP</h2></FONT>
+
+									<!-- Zero Configuration Table -->
+									<div class="panel panel-default">
+										<div class="panel-heading"></div>
+										<div class="panel-body">
+											<h:dataTable
+												class="display table table-striped table-bordered table-hover"
+												value="#{dictionnaireBean.lister()}" var="dictionnaire">
+      
+												<h:column>
+													<f:facet name="header">
+	                                      ID
+	                                        </f:facet>
+	                                        #{dictionnaire.iddictionnaire}                   
+	                               </h:column>
+												<h:column>
+													<f:facet name="header">
+	                                      Pakcakge
+	                                        </f:facet>
+	                                        #{dictionnaire.pakagesnmp}                   
+	                               </h:column>
+
+												<h:column>
+													<f:facet name="header">
+	                                  Description
+	                                        </f:facet>
+	                                        #{dictionnaire.description}                   
+	                               </h:column>
+
+
+											</h:dataTable>
+											<br></br>
+											
+										</div>
+									</div>
+
+									
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+												
+
+											
+											
+							
+			</h:form>
+												
+		
+		
+		
+		</h:body>
+		</ui:define>
+		</ui:composition>
+		</html>

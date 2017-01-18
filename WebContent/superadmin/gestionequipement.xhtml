@@ -1,0 +1,291 @@
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<title>Attijari Bank</title>
+	.form-group: Provides optimum spacing for label / inputs
+.has-error: validation style for a error. Also has other validation states such as .has-warning, and .has-success
+.form-control: Provides formatting to <input />, <textarea />, and <select /> elements.
+</h:head>
+<ui:composition template="../superadmin/index.xhtml">
+	<ui:define name="body">
+		<h:body>
+
+			<h:form>
+				<div class="ts-main-content">
+					<div class="content-wrapper">
+						<div class="container-fluid">
+
+							<div class="row">
+								<div class="col-md-12">
+
+									<FONT color="#FF8C00" style="text-align: center;">
+									<h2 class="page-title">Gestion Des Équipements Réseaux</h2></FONT>
+
+									<!-- Zero Configuration Table -->
+									<div class="panel panel-default">
+										<div class="panel-heading">Table Des Équipement Réseaux</div>
+										<div class="panel-body">
+											<h:dataTable
+												class="display table table-striped table-bordered table-hover"
+												value="#{equipementinresauBean.lister()}" var="eqr">
+
+												<h:column>
+													<f:facet name="header">
+	                                       ID
+	                                        </f:facet>
+	                                        #{eqr.id}                   
+	                               </h:column>
+
+												<h:column>
+													<f:facet name="header">
+	                                     Nom 
+	                                        </f:facet>
+	                                        #{eqr.hostname}                   
+	                               </h:column>
+
+
+												<h:column>
+													<f:facet name="header">
+	                                  État
+	                                        </f:facet>
+	                                        #{eqr.etat}                   
+	                               </h:column>
+												<h:column>
+													<f:facet name="header">
+	                                     Contact
+	                                        </f:facet>
+	                                        #{eqr.contact}                   
+	                               </h:column>
+												<h:column>
+													<f:facet name="header">
+	                                    Adresse IP
+	                                        </f:facet>
+	                                        #{eqr.ipadress}                   
+	                               </h:column>
+												<h:column>
+													<f:facet name="header">
+	                                     Localisation
+	                                        </f:facet>
+	                                        #{eqr.localisation}                   
+	                               </h:column>
+												<h:column>
+													<f:facet name="header">
+	                                     Marque
+	                                        </f:facet>
+	                                        #{eqr.marque}                   
+	                               </h:column>
+												<h:column>
+													<f:facet name="header">
+	                                Modèle
+	                                        </f:facet>
+	                                        #{eqr.modele}                   
+	                               </h:column>
+												<h:column>
+													<f:facet name="header">
+	                                     Numéro de Série
+	                                        </f:facet>
+	                                        #{eqr.numerodeserie}                   
+	                               </h:column>
+
+												<h:column>
+													<f:facet name="header" class="text-center">	
+                                        Actions
+                                        </f:facet>
+													<h:commandButton
+														action="#{equipementinresauBean.supprission()}" immediate="true"
+														class="btn btn-danger btn-xs" value="Supprimer" >
+														<f:setPropertyActionListener value="#{eqr}"
+															target="#{equipementinresauBean.equipementreseau}" />
+													</h:commandButton>
+													<button type="button" data-toggle="modal"
+														data-target="#myModal" style="float: right;"
+														class="btn btn-primary">
+														<span class="glyphicon glyphicon-plus"></span> Modifier
+													</button>
+												</h:column>
+
+											</h:dataTable>
+											<br></br>
+											<button type="button" data-toggle="modal"
+												data-target="#myModal" style="float: right;"
+												class="btn btn-primary">
+												<span class="glyphicon glyphicon-plus"></span> Ajouter
+											</button>
+										</div>
+									</div>
+
+									<div id="myModal" class="modal fade" tabindex="-1"
+										role="dialog" aria-labelledby="myModalLabel"
+										aria-hidden="true">
+										<div class="modal-dialog">
+											<div class="modal-content">
+												<div class="modal-body">
+													<div class="panel-body">
+														<div class="modal-body">
+															<p>
+																<FONT color="#FF8C00" style="text-align: center;"><h1>
+																		Ajouter Des Équipements Réseaux</h1></FONT>
+															</p>
+															<div
+																class="form-group #{!equ.valid ? 'has-error' : 'none'}">
+																<label class="col-sm-2 control-label">Id </label> <BR />
+																<h:message for="sequ" style="color:red" />
+																<BR />
+																<h:inputText
+																	value="#{equipementinresauBean.equipementreseau.id}"
+																	binding="#{equ}" id="sequ" label="Id"
+																	class="form-control">
+																	<f:validateRequired />
+																</h:inputText>
+															</div>
+															<div
+																class="form-group #{!nom.valid ? 'has-error' : 'none'}">
+																<label class="col-sm-2 control-label">Nom</label> <BR />
+																<h:message for="snom" style="color:red" />
+																<BR />
+																<h:inputText
+																	value="#{equipementinresauBean.equipementreseau.hostname}"
+																	binding="#{nom}" id="snom" label="Nom"
+																	class="form-control">
+																	<f:validateRequired />
+																</h:inputText>
+															</div>
+
+															<label class="col-sm-2 control-label">État</label>
+
+															<h:selectOneMenu
+																value="#{equipementinresauBean.equipementreseau.etat}"
+																class="form-control col-md-push-5">
+
+																<f:selectItem itemValue="Active" />
+																<f:selectItem itemValue="Desactive" />
+																<f:selectItem itemValue="Enattente" />
+															</h:selectOneMenu>
+															<div
+																class="form-group #{!adress.valid ? 'has-error' : 'none'}">
+																<label class="col-sm-2 control-label">Adresse IP</label>
+																<BR />
+																<h:message for="sadress" style="color:red" />
+																<BR />
+																<h:inputText
+																	value="#{equipementinresauBean.equipementreseau.ipadress}"
+																	binding="#{adress}" id="sadress" label="Adresse IP"
+																	class="form-control" >
+																	<f:validateRequired />
+																</h:inputText>
+															</div>
+															<div
+																class="form-group #{!nums.valid ? 'has-error' : 'none'}">
+																<label class="col-sm-2 control-label">Numéro de
+																	série </label> <BR />
+																<h:message for="snums" style="color:red" />
+																<BR />
+																<h:inputText
+																	value="#{equipementinresauBean.equipementreseau.numerodeserie}"
+																	binding="#{nums}" id="snum"
+																	label="Numèro de série" class="form-control">
+																	<f:validateRequired />
+																</h:inputText>
+															</div>
+															<div
+																class="form-group #{!cont.valid ? 'has-error' : 'none'}">
+																<label class="col-sm-2 control-label">Contact</label> <BR />
+																<h:message for="scont" style="color:red" />
+																<BR />
+																<h:inputText
+																	value="#{equipementinresauBean.equipementreseau.contact}"
+																	binding="#{cont}" id="scont" label="Contact"
+																	class="form-control">
+																	<f:validateRequired />
+																</h:inputText>
+															</div>
+															<div
+																class="form-group #{!lac.valid ? 'has-error' : 'none'}">
+																<label class="col-sm-2 control-label">Localisation</label>
+																<BR />
+																<h:message for="sloc" style="color:red" />
+																<BR />
+																<h:inputText
+																	value="#{equipementinresauBean.equipementreseau.localisation}"
+																	binding="#{loc}" id="sloc" label="Localisation"
+																	class="form-control">
+																	<f:validateRequired />
+																</h:inputText>
+															</div>
+															<div
+																class="form-group #{!type.valid ? 'has-error' : 'none'}">
+																<label class="col-sm-2 control-label">Type</label> <BR />
+																<h:message for="stype" style="color:red" />
+																<BR />
+																<h:inputText
+																	value="#{equipementinresauBean.equipementreseau.type}"
+																	binding="#{type}" id="stype" label="Type"
+																	class="form-control">
+																	<f:validateRequired />
+																</h:inputText>
+															</div>
+															<div
+																class="form-group #{!modele.valid ? 'has-error' : 'none'}">
+																<label class="col-sm-2 control-label">Modèle</label> <BR />
+																<h:message for="smodele" style="color:red" />
+																<BR />
+																<h:inputText
+																	value="#{equipementinresauBean.equipementreseau.modele}"
+																	binding="#{modele}" id="smodele" label="Modéle"
+																	class="form-control">
+																	<f:validateRequired />
+																</h:inputText>
+															</div>
+															<div
+																class="form-group #{!marq.valid ? 'has-error' : 'none'}">
+																<label class="col-sm-2 control-label">Marque</label> <BR />
+																<h:message for="smarq" style="color:red" />
+																<BR />
+																<h:inputText
+																	value="#{equipementinresauBean.equipementreseau.marque}"
+																	binding="#{marq}" id="smarq" label="Marque"
+																	class="form-control">
+																	<f:validateRequired />
+																</h:inputText>
+															</div>
+															<label class="col-sm-2 control-label">Armoire</label>
+															<h:selectOneMenu
+																value="#{equipementinresauBean.nomarmoire}"
+																class="form-control col-md-push-5">
+																<f:selectItems value="#{armoireBean.allarmoire}" />
+															</h:selectOneMenu>
+
+
+														</div>
+
+
+													</div>
+													<div class="modal-footer">
+														<h:commandButton type="submit" class="btn btn-success"
+															action="#{equipementinresauBean.ajout()}"
+															value="Enregistrer" />
+														<h:commandButton type="reset" class="btn btn-default"
+															action="gestionequipement" value="Cancel" />
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+
+			</h:form>
+
+
+		</h:body>
+	</ui:define>
+</ui:composition>
+</html>

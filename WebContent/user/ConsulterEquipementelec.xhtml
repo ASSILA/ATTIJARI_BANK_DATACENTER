@@ -1,0 +1,111 @@
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<title>Attijari Bank</title>
+</h:head>
+<ui:composition template="../user/index.xhtml">
+	<ui:define name="body">
+		<h:body>
+		<h:form>
+				<div class="ts-main-content">
+					<div class="content-wrapper">
+						<div class="container-fluid">
+
+							<div class="row">
+								<div class="col-md-12">
+
+									<FONT color="#FF8C00" style="text-align: center;"><h2 class="page-title">Consulter Les Équipements Électriques</h2></FONT>
+
+									<!-- Zero Configuration Table -->
+									<div class="panel panel-default">
+										<div class="panel-heading">Tableau Des Équipements Électriques</div>
+										<div class="panel-body">
+											<h:dataTable
+												class="display table table-striped table-bordered table-hover"
+												value="#{equipementElectriqueBean.lister()}" var="eqe">
+
+												<h:column>
+													<f:facet name="header">
+	                                       ID
+	                                        </f:facet>
+	                                        #{eqe.id}                   
+	                               </h:column>
+
+												<h:column>
+													<f:facet name="header">
+	                                     Nom 
+	                                        </f:facet>
+	                                        #{eqe.hostname}                   
+	                               </h:column>
+
+
+												<h:column>
+													<f:facet name="header">
+	                                     État
+	                                        </f:facet>
+	                                        #{eqe.etat}                   
+	                               </h:column>
+												<h:column>
+													<f:facet name="header">
+	                                     Contact
+	                                        </f:facet>
+	                                        #{eqe.contact}                   
+	                               </h:column>
+												<h:column>
+													<f:facet name="header">
+	                                    Adresse IP
+	                                        </f:facet>
+	                                        #{eqe.ipadress}                   
+	                               </h:column>
+												<h:column>
+													<f:facet name="header">
+	                                     Localisation
+	                                        </f:facet>
+	                                        #{eqe.localisation}                   
+	                               </h:column>
+												<h:column>
+													<f:facet name="header">
+	                                     Marque
+	                                        </f:facet>
+	                                        #{eqe.marque}                   
+	                               </h:column>
+												<h:column>
+													<f:facet name="header">
+	                                  Modèle
+	                                        </f:facet>
+	                                        #{eqe.modele}                   
+	                               </h:column>
+												<h:column>
+													<f:facet name="header">
+	                                     Numéro de Série
+	                                        </f:facet>
+	                                        #{eqe.numerodeserie}                   
+	                               </h:column>
+	                              
+	
+
+											</h:dataTable>
+											
+											
+										</div>
+									</div>
+
+									
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+
+			</h:form>
+												
+		
+		</h:body>
+		</ui:define>
+		</ui:composition>
+		</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<title>Attijari Bank</title>
+	.form-group: Provides optimum spacing for label / inputs
+.has-error: validation style for a error. Also has other validation states such as .has-warning, and .has-success
+.form-control: Provides formatting to <input />, <textarea />, and <select /> elements.
+</h:head>
+<ui:composition template="../superadmin/index.xhtml">
+	<ui:define name="body">
+		<h:body>
+
+			<h:form>
+				<div class="ts-main-content">
+					<div class="content-wrapper">
+						<div class="container-fluid">
+
+							<div class="row">
+								<div class="col-md-12">
+
+									<FONT color="#FF8C00" style="text-align: center;"><h2 class="page-title">Gestion Des Équipements Informatiques</h2></FONT>
+
+									<!-- Zero Configuration Table -->
+									<div class="panel panel-default">
+										<div class="panel-heading">Table des Équipements
+											Informatiques</div>
+										<div class="panel-body">
+											<h:dataTable
+												class="display table table-striped table-bordered table-hover"
+												value="#{equipementinformatiqueBean.lister()}" var="eqi">
+
+												<h:column>
+													<f:facet name="header">
+	                                       ID
+	                                        </f:facet>
+	                                        #{eqi.id}                   
+	                               </h:column>
+
+												<h:column>
+													<f:facet name="header">
+	                                     Nom 
+	                                 </f:facet>
+	                                        #{eqi.hostname}                   
+	                               </h:column>
+
+
+												<h:column>
+													<f:facet name="header">
+	                               État
+	                                        </f:facet>
+	                                        #{eqi.etat}                   
+	                               </h:column>
+												<h:column>
+													<f:facet name="header">
+	                                     Contact
+	                                        </f:facet>
+	                                        #{eqi.contact}                   
+	                               </h:column>
+												<h:column>
+													<f:facet name="header">
+	                                    Adresse IP
+	                                        </f:facet>
+	                                        #{eqi.ipadress}                   
+	                               </h:column>
+												<h:column>
+													<f:facet name="header">
+	                                     Localisation
+	                                        </f:facet>
+	                                        #{eqi.localisation}                   
+	                               </h:column>
+												<h:column>
+													<f:facet name="header">
+	                                     Marque
+	                                        </f:facet>
+	                                        #{eqi.marque}                   
+	                               </h:column>
+												<h:column>
+													<f:facet name="header">
+	                                    Modèle
+	                                        </f:facet>
+	                                        #{eqi.modele}                   
+	                               </h:column>
+												<h:column>
+													<f:facet name="header">
+	                                    Numéro de Série
+	                                        </f:facet>
+	                                        #{eqi.numerodeserie}                   
+	                               </h:column>
+
+												<h:column>
+													<f:facet name="header" class="text-center">	
+                                        Actions
+                                        </f:facet>
+													<h:commandButton
+														action="#{equipementinformatiqueBean.supprission()}" 
+														class="btn btn-danger btn-xs" immediate="true" value="Supprimer">
+														<f:setPropertyActionListener value="#{eqi}"
+															target="#{equipementinformatiqueBean.equipementinformatique}" />
+													</h:commandButton>
+													<button type="button" data-toggle="modal"
+														data-target="#myModal" style="float: right;"
+														class="btn btn-primary">
+														<span class="glyphicon glyphicon-plus"></span> Modifier
+													</button>
+												</h:column>
+
+											</h:dataTable>
+											<br></br>
+											<button type="button" data-toggle="modal"
+												data-target="#myModal" style="float: right;"
+												class="btn btn-primary">
+												<span class="glyphicon glyphicon-plus"></span> Ajouter
+											</button>
+										</div>
+									</div>
+
+									<div id="myModal" class="modal fade" tabindex="-1"
+										role="dialog" aria-labelledby="myModalLabel"
+										aria-hidden="true">
+										<div class="modal-dialog">
+											<div class="modal-content">
+												<div class="modal-body">
+													<div class="panel-body">
+														<div class="modal-body">
+															<p>
+																<FONT color="#FF8C00" style="text-align: center;"><h1>Ajouter
+																		Des Équipements Informatiques</h1></FONT>
+															</p>
+															<div
+																class="form-group #{!eqi.valid ? 'has-error' : 'none'}">
+																<label class="col-sm-2 control-label">Id </label> <BR />
+																<h:message for="seqi" style="color:red" />
+																<BR />
+																<h:inputText
+																	value="#{equipementinformatiqueBean.equipementinformatique.id}"
+																	binding="#{eqi}" id="seqi" label="Id"
+																	class="form-control">
+																	<f:validateRequired />
+																</h:inputText>
+															</div>
+															<div
+																class="form-group #{!nom.valid ? 'has-error' : 'none'}">
+																<label class="col-sm-2 control-label">Nom</label> <BR />
+																<h:message for="snom" style="color:red" />
+																<BR />
+																<h:inputText
+																	value="#{equipementinformatiqueBean.equipementinformatique.hostname}"
+																	binding="#{nom}" id="snom" label="Nom"
+																	class="form-control">
+																	<f:validateRequired />
+																</h:inputText>
+															</div>
+															<label class="col-sm-2 control-label">État</label>
+
+															<h:selectOneMenu
+																value="#{equipementinformatiqueBean.equipementinformatique.etat}"
+																class="form-control col-md-push-5">
+
+																<f:selectItem itemValue="Active" />
+																<f:selectItem itemValue="Enattente" />
+																<f:selectItem itemValue="Desactive" />
+															</h:selectOneMenu>
+															<div
+																class="form-group #{!adress.valid ? 'has-error' : 'none'}">
+																<label class="col-sm-2 control-label">Adresse IP</label>
+																<h:message for="adress" style="color:red" />
+																<h:inputText
+																	value="#{equipementinformatiqueBean.equipementinformatique.ipadress}"
+																	binding="#{adress}" id="sadress" label="Adresse IP"
+																	class="form-control" >
+																	<f:validateRequired />
+																</h:inputText>
+															</div>
+															<div
+																class="form-group #{!nums.valid ? 'has-error' : 'none'}">
+																<label class="col-sm-2 control-label"> Numéro de
+																	Série</label> <BR />
+																<h:message for="snums" style="color:red" />
+																<BR />
+																<h:inputText
+																	value="#{equipementinformatiqueBean.equipementinformatique.numerodeserie}"
+																	binding="#{nums}" id="snums"
+																	label="Numéro de Sèrie" class="form-control">
+																	<f:validateRequired />
+																</h:inputText>
+															</div>
+															<div
+																class="form-group #{!contact.valid ? 'has-error' : 'none'}">
+																<label class="col-sm-2 control-label">Contact</label> <BR />
+																<h:message for="scontact" style="color:red" />
+																<BR />
+																<h:inputText
+																	value="#{equipementinformatiqueBean.equipementinformatique.contact}"
+																	binding="#{contact}" id="scontact" label="Contact"
+																	class="form-control">
+																	<f:validateRequired />
+																</h:inputText>
+															</div>
+															<div
+																class="form-group #{!loc.valid ? 'has-error' : 'none'}">
+																<label class="col-sm-2 control-label">Localisation</label>
+																<BR />
+																<h:message for="sloc" style="color:red" />
+																<BR />
+																<h:inputText
+																	value="#{equipementinformatiqueBean.equipementinformatique.localisation}"
+																	binding="#{loc}" id="sloc" label="Localisation"
+																	class="form-control">
+																	<f:validateRequired />
+																</h:inputText>
+															</div>
+															<div
+																class="form-group #{!type.valid ? 'has-error' : 'none'}">
+																<label class="col-sm-2 control-label">Type</label> <BR />
+																<h:message for="stype" style="color:red" />
+																<BR />
+																<h:inputText
+																	value="#{equipementinformatiqueBean.equipementinformatique.type}"
+																	binding="#{type}" id="stype" label="Type"
+																	class="form-control">
+																	<f:validateRequired />
+																</h:inputText>
+															</div>
+															<div
+																class="form-group #{!modele.valid ? 'has-error' : 'none'}">
+																<label class="col-sm-2 control-label">Modèle</label> <BR />
+																<h:message for="smodele" style="color:red" />
+																<BR />
+																<h:inputText
+																	value="#{equipementinformatiqueBean.equipementinformatique.modele}"
+																	binding="#{modele}" id="smodele" label="Modéle"
+																	class="form-control">
+																	<f:validateRequired />
+																</h:inputText>
+															</div>
+															<div
+																class="form-group #{!marque.valid ? 'has-error' : 'none'}">
+																<label class="col-sm-2 control-label">Marque</label> <BR />
+																<h:message for="smarque" style="color:red" />
+																<BR />
+																<h:inputText
+																	value="#{equipementinformatiqueBean.equipementinformatique.marque}"
+																	binding="#{marque}" id="smarque" label="Marque"
+																	class="form-control">
+																	<f:validateRequired />
+																</h:inputText>
+															</div>
+															<label class="col-sm-2 control-label">Armoire</label>
+															<h:selectOneMenu
+																value="#{equipementinformatiqueBean.nomarmoire}"
+																class="form-control col-md-push-5">
+																<f:selectItems value="#{armoireBean.allarmoire}" />
+															</h:selectOneMenu>
+
+
+														</div>
+
+
+													</div>
+													<div class="modal-footer">
+														<h:commandButton type="submit" class="btn btn-success"
+															action="#{equipementinformatiqueBean.ajout()}"
+															value="Enregistrer" />
+														<h:commandButton type="reset" class="btn btn-default"
+															action="gestionequipementinfo" value="Cancel" />
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+
+			</h:form>
+
+
+
+		</h:body>
+	</ui:define>
+</ui:composition>
+</html>

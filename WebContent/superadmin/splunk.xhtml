@@ -1,0 +1,472 @@
+<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" -->
+<!-- "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> -->
+<!-- <html xmlns="http://www.w3.org/1999/xhtml" -->
+<!-- xmlns:ui="http://java.sun.com/jsf/facelets" -->
+<!-- 	xmlns:f="http://java.sun.com/jsf/core" -->
+<!--   xmlns:b="http://bootsfaces.net/ui" -->
+<!--   xmlns:h="http://xmlns.jcp.org/jsf/html"> -->
+<!-- <h:head> -->
+<!-- 	<title>Attijari Bank</title> -->
+<!-- </h:head> -->
+<!-- <ui:composition template="../user/index.xhtml"> -->
+<!-- 	<ui:define name="body"> -->
+<!-- <h:body> -->
+<!--     <b:navBar brand="Brand" brandHref="#" inverse="true"> -->
+<!--         <b:navbarLinks> -->
+<!--         <b:navLink value="Home" href="#"></b:navLink> -->
+<!--         <b:navLink value="Link" href="#"></b:navLink> -->
+<!--         <b:navLink value="Link" href="#"></b:navLink> -->
+<!--         </b:navbarLinks> -->
+<!--     </b:navBar> -->
+<!--     <h:form> -->
+   
+<!-- </h:body> -->
+<!-- </ui:define> -->
+<!-- </ui:composition> -->
+<!-- </html> -->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Project Name</title>
+        <meta name="author" content="The Author"></meta>
+		<link href="../res/css/glyphicons.css" rel="stylesheet" type="text/css"/>
+		<h:link  href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css"/>
+		<link href="../res/css/font-awesome-ie7.min.css" rel="stylesheet" type="text/css"/>
+		<link href="../res/css/forme.css" rel="stylesheet" type="text/css"/>
+		<link href="../res/css/ie.css" rel="stylesheet" type="text/css"/>
+		<link href="../res/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+		<link href="../res/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+		<link href="../res/css/awesome-bootstrap-checkbox.css" rel="stylesheet" type="text/css"/>
+		<link href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css"/>
+		<link href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css"/>
+    </h:head>
+    <h:body>
+<!--     <h:body style="padding: 60px;"> -->
+<!-- 	<b:navBar brand="Project name" brandHref="#" fixed="top" inverse="true"> -->
+<!-- 		<b:navbarLinks> -->
+<!-- 			<b:navLink value="Home" href="#"></b:navLink> -->
+<!-- 			<b:navLink value="About" href="#about"></b:navLink> -->
+<!-- 			<b:navLink value="Contact" href="#contact"></b:navLink> -->
+<!-- 		</b:navbarLinks> -->
+<!-- 	</b:navBar> -->
+<!-- 	<b:container> -->
+<!-- 		<b:jumbotron> -->
+<!-- 			<h1>BootsFaces Starter Template</h1> -->
+<!-- 			<p>Use this JSF document as a way to quickly start any new -->
+<!-- 				project.</p> -->
+<!-- 			<p>All you get is this text and a mostly barebone JSF document.</p> -->
+<!-- 			<p> -->
+<!-- 				<a -->
+<!-- 					href="https://github.com/TheCoder4eu/BootsFaces-examples/blob/master/src/main/webapp/starter_template.xhtml" -->
+<!-- 					class="btn btn-lg btn-info">View Page Source »</a> -->
+<!-- 			</p> -->
+<!-- 		</b:jumbotron> -->
+<!-- 	</b:container> -->
+<!-- 	<h:form> -->
+<!-- 		<b:row> -->
+<!-- 			<b:column col-sm="6"> -->
+<!-- 				<b:panel look="primary" -->
+<!-- 					title="AJAXified Combobox without mouse events"> -->
+<!-- 					<b:label text="Which JSF framework do you like most?" /> -->
+<!-- 					<b:selectOneMenu value="#{ajaxBean.jsf}" id="jsfID" -->
+<!-- 						onchange="console.log('before onChange');ajax:ajaxBean.onChange();javascript:console.log('afterOnChange')" -->
+<!-- 						onblur="console.log('blur');ajax:ajaxBean.onBlur()" -->
+<!-- 						onfocus="console.log('focus');ajax:ajaxBean.onFocus()" -->
+<!-- 						onclick="console.log('click');ajax:ajaxBean.onClick()" -->
+<!-- 						ondblclick="console.log('dblclick');ajax:ajaxBean.onDblClick()" -->
+<!-- 						onkeydown="console.log('key down');ajax:ajaxBean.onKeyDown()" -->
+<!-- 						onkeyup="console.log('key up');ajax:ajaxBean.onKeyUp()" -->
+<!-- 						onkeypress="console.log('key press');ajax:ajaxBean.onKeyPress()" -->
+<!-- 						onvaluechange="console.log('valueChange);ajax:ajaxBean.onValueChange()" -->
+<!-- 						onselect="console.log('select');ajax:ajaxBean.onSelect()" -->
+<!-- 						update="messages jsfMessages"> -->
+
+
+<!-- 						<f:selectItem itemLabel="(Please select)" itemValue="0" /> -->
+<!-- 						<f:selectItem itemLabel="PrimeFaces" itemValue="1" /> -->
+<!-- 						<f:selectItem itemLabel="BootsFaces" itemValue="2" /> -->
+<!-- 						<f:selectItem itemLabel="I combine both!" itemValue="3" /> -->
+<!-- 					</b:selectOneMenu> -->
+<!-- 				</b:panel> -->
+<!-- 				<b:panel look="primary" -->
+<!-- 					title="AJAXified Combobox including mouse events"> -->
+<!-- 					<ui:remove> -->
+<!-- 						onmousemove="console.log('mouse move')ajax:ajaxBean.onMouseMove();"  -->
+<!-- 					</ui:remove> -->
+
+<!-- 					<b:label text="What about JavaScript?" /> -->
+<!-- 					<b:selectOneMenu value="#{ajaxBean.js}" id="jsID" -->
+<!-- 						onchange="console.log('before onChange');ajax:ajaxBean.onChange();javascript:console.log('afterOnChange')" -->
+<!-- 						onblur="console.log('blur');ajax:ajaxBean.onBlur()" -->
+<!-- 						onfocus="console.log('focus');ajax:ajaxBean.onFocus()" -->
+<!-- 						onclick="console.log('click');ajax:ajaxBean.onClick()" -->
+<!-- 						ondblclick="console.log('dblclick');ajax:ajaxBean.onDblClick()" -->
+<!-- 						onkeydown="console.log('keyd own');ajax:ajaxBean.onKeyDown()" -->
+<!-- 						onkeyup="console.log('key up');ajax:ajaxBean.onKeyDown()" -->
+<!-- 						onmousedown="console.log('mouse down');ajax:ajaxBean.onMouseDown();" -->
+<!-- 						onmouseout="console.log('mouse out');ajax:ajaxBean.onMouseOut();" -->
+<!-- 						onmouseup="console.log('mouse up');ajax:ajaxBean.onMouseUp();" -->
+<!-- 						onmouseselect="console.log('mouse select');ajax:ajaxBean.onMouseSelect();" -->
+<!-- 						onvaluechange="console.log('valueChange);ajax:ajaxBean.onValueChange()" -->
+<!-- 						onselect="console.log('select');ajax:ajaxBean.onSelect()" -->
+<!-- 						update="messages jsfMessages"> -->
+
+
+<!-- 						<f:selectItem itemLabel="(Please select)" itemValue="0" /> -->
+<!-- 						<f:selectItem itemLabel="JavaScript? No way!" itemValue="1" /> -->
+<!-- 						<f:selectItem itemLabel="AngularFaces rocks!" itemValue="2" /> -->
+<!-- 						<f:selectItem itemLabel="Real developers do JavaScript." -->
+<!-- 							itemValue="3" /> -->
+<!-- 					</b:selectOneMenu> -->
+<!-- 				</b:panel> -->
+<!-- 				<b:panel look="primary" title="AJAXified Combobox - only mouse move"> -->
+<!-- 					<ui:remove> -->
+<!-- 					</ui:remove> -->
+
+<!-- 					<b:label -->
+<!-- 						text="Which framework do you choose for desktop applications?" /> -->
+<!-- 					<b:selectOneMenu value="#{ajaxBean.desktop}" id="desktopId" -->
+<!-- 						onmousemove="console.log('mouse move');ajax:ajaxBean.onMouseMove();" -->
+<!-- 						update="messages jsfMessages"> -->
+
+
+<!-- 						<f:selectItem itemLabel="(Please select)" itemValue="0" /> -->
+<!-- 						<f:selectItem itemLabel=".NET" itemValue="1" /> -->
+<!-- 						<f:selectItem itemLabel="JavaFX" itemValue="2" /> -->
+<!-- 						<f:selectItem itemLabel="GroovyFX" itemValue="3" /> -->
+<!-- 						<f:selectItem itemLabel="JSF" itemValue="4" /> -->
+<!-- 					</b:selectOneMenu> -->
+<!-- 				</b:panel> -->
+<!-- 				<b:panel look="primary" title="JSF messages" id="jsfMessages"> -->
+<!-- 					<b:messages showSummary="false" /> -->
+<!-- 				</b:panel> -->
+
+<!-- 			</b:column> -->
+<!-- 			<b:column col-sm="6"> -->
+<!-- 				<b:well id="messages"> -->
+<!--             Last server-side events: -->
+<!--             <ul> -->
+<!-- 						<ui:repeat var="message" value="#{ajaxBean.messages}"> -->
+<!-- 							<li>#{message}</li> -->
+<!-- 						</ui:repeat> -->
+<!-- 					</ul> -->
+<!-- 				</b:well> -->
+<!-- 			</b:column> -->
+<!-- 		</b:row> -->
+<!-- 	</h:form> -->
+
+
+<!-- 	<b:row> -->
+<!-- 		<b:inputText value="" span="3" placeholder="Row 1 - 3 columns" /> -->
+<!-- 		<b:inputText value="" span="6" placeholder="Row 1 - 6 columns" /> -->
+<!-- 		<b:inputText value="" span="3" placeholder="Row 2 - 3 columns" /> -->
+<!-- 	</b:row> -->
+<!-- 	<b:row> -->
+<!-- 		<b:inputText value="value 1" span="3" label="Row 2 - 3 columns" -->
+<!-- 			renderLabel="true" /> -->
+<!-- 		<b:inputText value="value 2" span="5" label="Row 2 - 5 columns" -->
+<!-- 			renderLabel="true" /> -->
+<!-- 		<b:inputText value="value 3" span="4" label="Row 2 - 4 columns" -->
+<!-- 			renderLabel="true" /> -->
+<!-- 	</b:row> -->
+<!-- 	<b:row> -->
+<!-- 		<b:selectBooleanCheckbox value="true" span="2" -->
+<!-- 			label="Row 3 - 2 columns" renderLabel="true" /> -->
+<!-- 		<b:selectBooleanCheckbox value="false" span="5" -->
+<!-- 			label="Row 3 - 5 columns" renderLabel="true" /> -->
+<!-- 		<b:selectBooleanCheckbox value="true" span="5" -->
+<!-- 			label="Row 3 - 5 columns" renderLabel="true" /> -->
+<!-- 	</b:row> -->
+<!-- 	<b:row> -->
+<!-- 		<b:selectOneMenu value="" span="3" label="Row 4 - 3 columns" -->
+<!-- 			renderLabel="true"> -->
+<!-- 			<f:selectItem itemLabel="Value 1" /> -->
+<!-- 			<f:selectItem itemLabel="Value 2" /> -->
+<!-- 		</b:selectOneMenu> -->
+<!-- 		<b:selectOneMenu value="" span="3" label="Row 4 - 3 columns" -->
+<!-- 			renderLabel="true"> -->
+<!-- 			<f:selectItem itemLabel="Value 1" /> -->
+<!-- 			<f:selectItem itemLabel="Value 2" /> -->
+<!-- 		</b:selectOneMenu> -->
+<!-- 		<b:selectOneMenu value="" span="3" label="Row 4 - 3 columns" -->
+<!-- 			renderLabel="true"> -->
+<!-- 			<f:selectItem itemLabel="Value 1" /> -->
+<!-- 			<f:selectItem itemLabel="Value 2" /> -->
+<!-- 		</b:selectOneMenu> -->
+<!-- 		<b:selectOneMenu value="" span="3" label="Row 4 - 3 columns" -->
+<!-- 			renderLabel="true"> -->
+<!-- 			<f:selectItem itemLabel="Value 1" /> -->
+<!-- 			<f:selectItem itemLabel="Value 2" /> -->
+<!-- 		</b:selectOneMenu> -->
+<!-- 	</b:row> -->
+<!-- 	<b:row> -->
+<!-- 		<b:selectMultiMenu value="" span="2" label="Row 5 - 2 columns" -->
+<!-- 			renderLabel="true"> -->
+<!-- 			<f:selectItem itemLabel="Value 1" /> -->
+<!-- 			<f:selectItem itemLabel="Value 2" /> -->
+<!-- 		</b:selectMultiMenu> -->
+<!-- 		<b:selectMultiMenu value="" span="3" label="Row 5 - 3 columns" -->
+<!-- 			renderLabel="true"> -->
+<!-- 			<f:selectItem itemLabel="Value 1" /> -->
+<!-- 			<f:selectItem itemLabel="Value 2" /> -->
+<!-- 		</b:selectMultiMenu> -->
+<!-- 		<b:selectMultiMenu value="" span="4" label="Row 5 - 4 columns" -->
+<!-- 			renderLabel="true"> -->
+<!-- 			<f:selectItem itemLabel="Value 1" /> -->
+<!-- 			<f:selectItem itemLabel="Value 2" /> -->
+<!-- 		</b:selectMultiMenu> -->
+<!-- 		<b:selectMultiMenu value="" span="3" label="Row 5 - 3 columns" -->
+<!-- 			renderLabel="true"> -->
+<!-- 			<f:selectItem itemLabel="Value 1" /> -->
+<!-- 			<f:selectItem itemLabel="Value 2" /> -->
+<!-- 		</b:selectMultiMenu> -->
+<!-- 	</b:row> -->
+<!-- 	<b:row> -->
+<!-- 		<b:switch value="true" span="2" label="Row 6 - 2 columns" -->
+<!-- 			renderLabel="true" /> -->
+<!-- 		<b:switch value="false" span="5" label="Row 6 - 5 columns" -->
+<!-- 			renderLabel="true" /> -->
+<!-- 		<b:switch value="true" span="5" label="Row 6 - 5 columns" -->
+<!-- 			renderLabel="true" /> -->
+<!-- 	</b:row> -->
+<!-- 	<b:row> -->
+<!-- 		<b:inputTextarea value="value 1" span="3" rows="3" -->
+<!-- 			label="Row 7 - 3 columns" renderLabel="true" /> -->
+<!-- 		<b:inputTextarea value="value 2" span="5" rows="3" -->
+<!-- 			label="Row 7 - 5 columns" renderLabel="true" /> -->
+<!-- 		<b:inputTextarea value="value 3" span="4" rows="3" -->
+<!-- 			label="Row 7 - 4 columns" renderLabel="true" /> -->
+<!-- 	</b:row> -->
+
+<!-- 	<b:tabView id="tabViewId"> -->
+<!-- 		<b:tab> -->
+<!-- 			<h:form> -->
+<!-- 				<b:panel id="panelId"> -->
+<!-- 					<b:commandButton update=":tabViewId" /> -->
+<!-- 					<b:commandButton update="panelId" /> -->
+<!-- 				</b:panel> -->
+<!-- 			</h:form> -->
+<!-- 		</b:tab> -->
+<!-- 	</b:tabView> -->
+<!-- 	 -->
+<!-- <h:form id="form"> -->
+<!--     <p:growl id="msgs" showDetail="true" /> -->
+  
+<!--     <b:panelGrid colSpans="2,10"> -->
+<!--         <p:outputLabel for="inline" value="Inline:" /> -->
+<!--         <p:calendar id="inline" value="#{calendarView.date1}" mode="inline" /> -->
+  
+<!--         <p:outputLabel for="popup" value="Popup:" /> -->
+<!--         <p:calendar id="popup" value="#{calendarView.date2}" /> -->
+  
+<!--         <p:outputLabel for="button" value="Button:" /> -->
+<!--         <p:calendar id="button" value="#{calendarView.date3}" showOn="button" /> -->
+  
+<!--         <p:outputLabel for="event" value="Select Event:" /> -->
+<!--         <p:calendar id="event" value="#{calendarView.date4}"> -->
+<!--             <p:ajax event="dateSelect" listener="#{calendarView.onDateSelect}" update="msgs" /> -->
+<!--         </p:calendar> -->
+  
+<!--         <p:outputLabel for="german" value="German:" /> -->
+<!--         <p:calendar id="german" value="#{calendarView.date5}" locale="de" navigator="true" pattern="yyyy-MMM-dd" /> -->
+  
+<!--         <p:outputLabel for="restricted" value="Restricted:" /> -->
+<!--         <p:calendar id="restricted" value=" " mindate="4/1/14" maxdate="7/1/14" /> -->
+  
+<!--         <p:outputLabel for="multi" value="Multiple:" /> -->
+<!--         <p:calendar id="multi" value="#{calendarView.date7}" pages="3" /> -->
+  
+<!--         <p:outputLabel for="effect" value="Effect:" /> -->
+<!--         <p:calendar id="effect" value="#{calendarView.date8}" effect="fold" /> -->
+  
+<!--         <p:outputLabel for="mask" value="Mask:" /> -->
+<!--         <p:calendar id="mask" value="#{calendarView.date9}" pattern="dd-MM-yyyy" mask="true" /> -->
+  
+<!--         <p:outputLabel for="datetime" value="Datetime:" /> -->
+<!--         <p:calendar id="datetime" value="#{calendarView.date10}" pattern="MM/dd/yyyy HH:mm:ss" /> -->
+  
+<!--         <p:outputLabel for="time" value="Time:" /> -->
+<!--         <p:calendar id="time" value=" " pattern="HH:mm a" timeOnly="true"  /> -->
+<!--      </b:panelGrid> -->
+  
+<!--     <p:commandButton value="Submit" update="msgs" actionListener="#{calendarView.click}" icon="ui-icon-check" /> -->
+  
+<!--     <p:dialog modal="true" resizable="false" header="Values" widgetVar="dlg" showEffect="fold"> -->
+<!--         <p:panelGrid id="display" columns="2" columnClasses="label,value"> -->
+<!--             <h:outputText value="Inline:" /> -->
+<!--             <h:outputText value="#{calendarView.date1}"> -->
+<!--                 <f:convertDateTime pattern="MM/dd/yyyy" /> -->
+<!--             </h:outputText> -->
+  
+<!--             <h:outputText value="Popup:" /> -->
+<!--             <h:outputText value="#{calendarView.date2}"> -->
+<!--                 <f:convertDateTime pattern="MM/dd/yyyy" /> -->
+<!--             </h:outputText> -->
+  
+<!--             <h:outputText value="Button:" /> -->
+<!--             <h:outputText value="#{calendarView.date3}"> -->
+<!--                 <f:convertDateTime pattern="MM/dd/yyyy" /> -->
+<!--             </h:outputText> -->
+  
+<!--             <p:outputLabel for="issue327" value="Issue 327" /> -->
+<!--             <p:calendar value="" mode="popup" size="8" showOn="button" id="issue327"/> -->
+ 
+<!--             <h:outputText value="Event:" /> -->
+<!--             <h:outputText value="#{calendarView.date4}"> -->
+<!--                 <f:convertDateTime pattern="MM/dd/yyyy" /> -->
+<!--             </h:outputText> -->
+  
+<!--             <h:outputText value="German:" /> -->
+<!--             <h:outputText value="#{calendarView.date5}"> -->
+<!--                 <f:convertDateTime pattern="MM/dd/yyyy" /> -->
+<!--             </h:outputText> -->
+  
+<!--             <h:outputText value="Restricted:" /> -->
+<!--             <h:outputText value="#{calendarView.date6}"> -->
+<!--                 <f:convertDateTime pattern="MM/dd/yyyy" /> -->
+<!--             </h:outputText> -->
+  
+<!--             <h:outputText value="Multiple:" /> -->
+<!--             <h:outputText value="#{calendarView.date7}"> -->
+<!--                 <f:convertDateTime pattern="MM/dd/yyyy" /> -->
+<!--             </h:outputText> -->
+  
+<!--             <h:outputText value="Effect:" /> -->
+<!--             <h:outputText value="#{calendarView.date8}"> -->
+<!--                 <f:convertDateTime pattern="MM/dd/yyyy" /> -->
+<!--             </h:outputText> -->
+  
+<!--             <h:outputText value="Mask:" /> -->
+<!--             <h:outputText value="#{calendarView.date9}"> -->
+<!--                 <f:convertDateTime pattern="MM/dd/yyyy" /> -->
+<!--             </h:outputText> -->
+  
+<!--             <h:outputText value="Datetime:" /> -->
+<!--             <h:outputText value="#{calendarView.date10}"> -->
+<!--                 <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" /> -->
+<!--             </h:outputText> -->
+  
+<!--             <h:outputText value="Time:" /> -->
+<!--             <h:outputText value="#{calendarView.date11}"> -->
+<!--                 <f:convertDateTime pattern="HH:mm a" /> -->
+<!--             </h:outputText> -->
+<!--         </p:panelGrid> -->
+<!--     </p:dialog> -->
+<!-- </h:form> -->
+<!--  <b:dataTable value="#{dictionnaireBean.lister()}" var="dictionnaire" id="bcarPool" styleClass="table table-striped table-bordered" -->
+<!--  style="width:100%"> -->
+<!--   <h:column> -->
+<!--     <f:facet name="header"> -->
+<!--       <h:outputText value="Brand" /> -->
+<!--     </f:facet> -->
+<!--     <h:outputText value="#{dictionnaire.iddictionnaire}" /> -->
+<!--   </h:column> -->
+<!--   <h:column> -->
+<!--     <f:facet name="header"> -->
+<!--       <h:outputText value="Type" /> -->
+<!--     </f:facet> -->
+<!--     <h:inputText value="#{dictionnaire.description}" /> -->
+<!--   </h:column> -->
+<!--  <h:column> -->
+<!--     <f:facet name="header"> -->
+<!--       <h:outputText value="Type" /> -->
+<!--     </f:facet> -->
+<!--     <h:inputText value="#{dictionnaire.pakagesnmp}" /> -->
+<!--   </h:column> -->
+<!-- </b:dataTable> -->
+<b:dataTable value="#{dictionnaireBean.lister()}" var="dictionnaire" id="bcarPool2" styleClass="table table-striped table-bordered"
+ style="width:100%" fixedHeader="true" responsive="true" lang="it">
+  <h:column>
+    <f:facet name="header">
+      <h:outputText value="id" />
+    </f:facet>
+    <h:outputText value="#{dictionnaire.iddictionnaire}" />
+  </h:column>
+  <h:column>
+    <f:facet name="header">
+      <h:outputText value="pakage snmp" />
+    </f:facet>
+    <h:inputText value="#{dictionnaire.pakagesnmp}"/>
+  </h:column>
+  <h:column>
+    <f:facet name="header">
+       <h:outputText value="description" />
+    </f:facet>
+    <h:outputText value="#{dictionnaire.description}"/>
+  </h:column>
+  
+</b:dataTable>
+<!-- <b:icon name="cloud" /> glyphicon-cloud<br/> -->
+<!-- <b:icon name="envelope" /> glyphicon-envelope<br/> -->
+<!-- <b:icon name="pencil" /> glyphicon-pencil<br/> -->
+<!-- <b:icon name="glass" /> glyphicon-glass<br/> -->
+<!-- <b:iconAwesome name="camera-retro" /> fa-camera-retro<br/> -->
+<!-- <b:iconAwesome name="coffee" /> fa-coffee<br/> -->
+<!-- <b:iconAwesome name="futbol-o" /> fa-futbol-o<br/> -->
+<!-- <b:iconAwesome name="heartbeat" /> fa-heartbeat<br/> -->
+<!-- <b:iconAwesome name="group" /> fa-group<br/> -->
+<!-- <b:iconAwesome name="gamepad" /> fa-gamepad -->
+<script >
+
+var table = $('#example').DataTable();
+
+table.columns( '.select-filter' ).every( function () {
+    var that = this;
+ 
+    // Create the select list and search operation
+    var select = $('<select />')
+        .appendTo(
+            this.footer()
+        )
+        .on( 'change', function () {
+            that
+                .search( $(this).val() )
+                .draw();
+        } );
+ 
+    // Get the search data for the first column and add to the select list
+    this
+        .cache( 'search' )
+        .sort()
+        .unique()
+        .each( function ( d ) {
+            select.append( $('<option value="'+d+'">'+d+'</option>') );
+        } );
+} );
+
+
+</script>
+<script>
+$(document).ready(function() {
+    // Setup - add a text input to each footer cell
+    $('#example tfoot th').each( function () {
+        var title = $(this).text();
+        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+    } );
+ 
+    // DataTable
+    var table = $('#example').DataTable();
+ 
+    // Apply the search
+    table.columns().every( function () {
+        var that = this;
+ 
+        $( 'input', this.footer() ).on( 'keyup change', function () {
+            if ( that.search() !== this.value ) {
+                that
+                    .search( this.value )
+                    .draw();
+            }
+        } );
+    } );
+} );
+</script>
+<script type="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+<script type="//code.jquery.com/jquery-1.12.0.min.js"></script>
+</h:body>
+</html>

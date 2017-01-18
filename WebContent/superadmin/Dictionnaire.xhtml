@@ -1,0 +1,164 @@
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<title>Attijari Bank</title>
+.form-group: Provides optimum spacing for label / inputs
+.has-error: validation style for a error. Also has other validation states such as .has-warning, and .has-success
+.form-control: Provides formatting to <input />, <textarea />, and <select /> elements.
+</h:head>
+<ui:composition template="../superadmin/index.xhtml">
+	<ui:define name="body">
+		<h:body>
+			<h:form>
+				<div class="ts-main-content">
+					<div class="content-wrapper">
+						<div class="container-fluid">
+
+							<div class="row">
+								<div class="col-md-12">
+
+									<FONT color="#FF8C00" style="text-align: center;"><h1 class="page-title">Dictionnaire SNMP</h1></FONT>
+
+									<!-- Zero Configuration Table -->
+									<div class="panel panel-default">
+										<div class="panel-heading"></div>
+										<div class="panel-body">
+											<h:dataTable
+												class="display table table-striped table-bordered table-hover"
+												value="#{dictionnaireBean.lister()}" var="dictionnaire">
+
+												<h:column>
+													<f:facet name="header">
+	                                      ID
+	                                        </f:facet>
+	                                        #{dictionnaire.iddictionnaire}                   
+	                               </h:column>
+												<h:column>
+													<f:facet name="header">
+	                                      Pakcakge
+	                                        </f:facet>
+	                                        #{dictionnaire.pakagesnmp}                   
+	                               </h:column>
+
+												<h:column>
+													<f:facet name="header">
+	                                  Description
+	                                        </f:facet>
+	                                        #{dictionnaire.description}                   
+	                               </h:column>
+												<h:column>
+													<h:commandButton action="#{dictionnaireBean.supprission()}"
+														 class="btn btn-danger btn-xs" immediate="true"
+														value="Supprimer">
+														<f:setPropertyActionListener value="#{dictionnaire}"
+															target="#{dictionnaireBean.dictionnaire}" />
+													</h:commandButton>
+													<button type="button" data-toggle="modal"
+														data-target="#myModal" style="float: right;"
+														class="btn btn-primary">
+														<span class="glyphicon glyphicon-plus"></span> modifier
+													</button>
+												</h:column>
+
+											</h:dataTable>
+											<br></br>
+											<button type="button" data-toggle="modal"
+												data-target="#myModal" style="float: right;"
+												class="btn btn-primary">
+												<span class="glyphicon glyphicon-plus"></span> Ajouter
+											</button>
+										</div>
+									</div>
+
+									<div id="myModal" class="modal fade" tabindex="-1"
+										role="dialog" aria-labelledby="myModalLabel"
+										aria-hidden="true">
+										<div class="modal-dialog">
+											<div class="modal-content">
+												<div class="modal-body">
+													<div class="panel-body">
+														<div class="modal-body">
+															<p>
+																<FONT color="#FF8C00" style="text-align: center;"><h1>
+																		<label class="col-sm-2 control-label">Ajouter
+																			Dictionnaire</label>
+																	</h1></FONT>
+
+															</p>
+															<BR />
+															<div
+																class="form-group #{!dic.valid ? 'has-error' : 'none'}">
+																<label class="col-sm-2 control-label">Id</label> <BR />
+																<h:message for="sdic" style="color:red" />
+																<BR />
+																<h:inputText binding="#{dic}" id="sdic" label="Id"
+																	value="#{dictionnaireBean.dictionnaire.iddictionnaire}"
+																	
+																	class="form-control">
+																	<f:validateRequired />
+																</h:inputText>
+															</div>
+															<div
+																class="form-group #{!pakage.valid ? 'has-error' : 'none'}">
+																<label class="col-sm-2 control-label">pakagesnmp</label>
+																<BR />
+																<h:message for="spakage" style="color:red" />
+																<BR />
+																<h:inputText binding="#{pakage}" id="spakage"
+																	value="#{dictionnaireBean.dictionnaire.pakagesnmp}"
+																	label="pakagesnmp" class="form-control">
+																	<f:validateRequired />
+																</h:inputText>
+															</div>
+															<div
+																class="form-group #{!descript.valid ? 'has-error' : 'none'}">
+																<label class="col-sm-2 control-label">description</label>
+																<BR />
+																<h:message for="sdescript" style="color:red" />
+																<BR />
+																<h:inputText binding="#{descript}" id="sdescript"
+																	value="#{dictionnaireBean.dictionnaire.description}"
+																	label="description" class="form-control">
+																	<f:validateRequired />
+																</h:inputText>
+															</div>
+
+														</div>
+
+
+													</div>
+													<div class="modal-footer">
+														<h:commandButton type="submit" class="btn btn-success"
+															action="#{dictionnaireBean.ajout()}" value="Enregistrer" />
+														<h:commandButton type="reset" class="btn btn-default"
+															action="Dictionnaire" value="Cancel" />
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+
+
+
+
+
+			</h:form>
+
+
+
+
+
+		</h:body>
+	</ui:define>
+</ui:composition>
+</html>

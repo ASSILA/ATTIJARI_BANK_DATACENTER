@@ -1,0 +1,145 @@
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+	<meta name="theme-color" content="#3e454c" />
+
+	<title>Attijari Bank</title>
+	<!-- Font awesome -->
+	<link rel="stylesheet" href="../res/css/font-awesome.min.css" />
+	<!-- Sandstone Bootstrap CSS -->
+	<link rel="stylesheet" href="../res/css/bootstrap.min.css" />
+	<!-- Bootstrap Datatables -->
+	<link rel="stylesheet" href="../res/css/dataTables.bootstrap.min.css" />
+	<!-- Bootstrap social button library -->
+	<link rel="stylesheet" href="../res/css/bootstrap-social.css" />
+	<!-- Bootstrap select -->
+	<link rel="stylesheet" href="../res/css/bootstrap-select.css" />
+	<!-- Bootstrap file input -->
+	<link rel="stylesheet" href="../res/css/fileinput.min.css" />
+	<!-- Awesome Bootstrap checkbox -->
+	<link rel="stylesheet" href="../res/css/awesome-bootstrap-checkbox.css" />
+	<!-- Admin Stye -->
+	<link rel="stylesheet" href="../res/css/style.css" />
+</h:head>
+<ui:composition template="../user/index.xhtml">
+	<ui:define name="body">
+		<h:body>
+			<h:form>
+				<div class="ts-main-content">
+					<div class="content-wrapper">
+						<div class="container-fluid">
+							<div class="panel panel-default">
+								<div class="panel-heading"></div>
+								<div class="panel-body">
+
+									<div class="row">
+										<div class="col-md-12">
+
+											<FONT color="#FF8C00" style="text-align: center;"><h2 class="page-title">Consulter Les Armoires</h2></FONT>
+
+											<!-- Zero Configuration Table -->
+											<div class="panel panel-default">
+										<div class="panel-heading">Table des Armoires</div>
+										<div class="panel-body">
+											<h:dataTable
+												class="display table table-striped table-bordered table-hover"
+												value="#{armoireBean.lister()}" var="armoire">
+
+												<h:column>
+													<f:facet name="header">
+	                                       ID
+	                                        </f:facet>
+	                                        #{armoire.idarmoire}                   
+	                               </h:column>
+
+												<h:column>
+													<f:facet name="header">
+	                                     Nom du Armoire
+	                                        </f:facet>
+	                                        #{armoire.nom}                   
+	                               </h:column>
+
+
+												<h:column>
+													<f:facet name="header">
+	                                     Position
+	                                        </f:facet>
+	                                        #{armoire.position}                   
+	                               </h:column>
+												<h:column>
+													<f:facet name="header">
+	                                     Lieu
+	                                        </f:facet>
+	                                        #{armoire.lieu}                   
+	                               </h:column>
+												<h:column>
+													<f:facet name="header">
+	                                 État
+	                                        </f:facet>
+	                                        #{armoire.etat}                   
+	                               </h:column>
+												<h:column>
+													<f:facet name="header">
+	                                     Type
+	                                        </f:facet>
+	                                        #{armoire.type}                   
+	                               </h:column>
+												<h:column>
+													<f:facet name="header">
+	                                    Nombre d'unité
+	                                        </f:facet>
+	                                        #{armoire.nombreunite}                   
+	                               </h:column>
+												
+												<h:column>
+													<f:facet name="header">
+	                                   Numéro
+	                                        </f:facet>
+	                                        #{armoire.numero}                   
+	                               </h:column>
+											
+
+																</h:dataTable>
+
+															</div>
+														</div>
+														
+
+													</div>
+												</div>
+											</div>
+
+										</div>
+
+
+									</div>
+
+								</div>
+
+							</div>
+						
+			</h:form>
+
+			<script src="../res/js/jquery.min.js"></script>
+			<script src="../res/js/bootstrap-select.min.js"></script>
+			<script src="../res/js/bootstrap.min.js"></script>
+			<script src="../res/js/jquery.dataTables.min.js"></script>
+			<script src="../res/js/dataTables.bootstrap.min.js"></script>
+			<script src="../res/js/Chart.min.js"></script>
+			<script src="../res/js/fileinput.js"></script>
+			<script src="../res/js/chartData.js"></script>
+			<script src="../res/js/main.js"></script>
+
+
+		</h:body>
+	</ui:define>
+</ui:composition>
+</html>

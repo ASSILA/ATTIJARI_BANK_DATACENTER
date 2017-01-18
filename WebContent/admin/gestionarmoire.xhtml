@@ -1,0 +1,252 @@
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+<title>Attijari Bank</title>
+.form-group: Provides optimum spacing for label / inputs
+.has-error: validation style for a error. Also has other validation states such as .has-warning, and .has-success
+.form-control: Provides formatting to <input />, <textarea />, and <select /> elements.
+</h:head>
+<ui:composition template="../admin/index.xhtml">
+	<ui:define name="body">
+		<h:body>
+			<h:form>
+				<div class="ts-main-content">
+					<div class="content-wrapper">
+						<div class="container-fluid">
+
+							<div class="row">
+								<div class="col-md-12">
+
+									<FONT color="#FF8C00" style="text-align: center;">
+										<h2 class="page-title">Gestion Des Armoires</h2>
+									</FONT>
+
+									<!-- Zero Configuration Table -->
+									<div class="panel panel-default">
+										<div class="panel-heading">Table des Armoires</div>
+										<div class="panel-body">
+											<h:dataTable
+												class="display table table-striped table-bordered table-hover"
+												value="#{armoireBean.lister()}" var="armoire">
+
+												<h:column>
+													<f:facet name="header">
+	                                       ID
+	                                        </f:facet>
+	                                        #{armoire.idarmoire}                   
+	                               </h:column>
+
+												<h:column>
+													<f:facet name="header">
+	                                     Nom du Armoire
+	                                        </f:facet>
+	                                        #{armoire.nom}                   
+	                               </h:column>
+
+
+												<h:column>
+													<f:facet name="header">
+	                                     Position
+	                                        </f:facet>
+	                                        #{armoire.position}                   
+	                               </h:column>
+												<h:column>
+													<f:facet name="header">
+	                                     Lieu
+	                                        </f:facet>
+	                                        #{armoire.lieu}                   
+	                               </h:column>
+												<h:column>
+													<f:facet name="header">
+	                                 État
+	                                        </f:facet>
+	                                        #{armoire.etat}                   
+	                               </h:column>
+												<h:column>
+													<f:facet name="header">
+	                                     Type
+	                                        </f:facet>
+	                                        #{armoire.type}                   
+	                               </h:column>
+												<h:column>
+													<f:facet name="header">
+	                                    Nombre d'unité
+	                                        </f:facet>
+	                                        #{armoire.nombreunite}                   
+	                               </h:column>
+
+												<h:column>
+													<f:facet name="header">
+	                                   Numéro
+	                                        </f:facet>
+	                                        #{armoire.numero}                   
+	                               </h:column>
+												<h:column>
+													<f:facet name="header" class="text-center">	
+                                        Actions
+                                        </f:facet>
+													<h:commandButton action="#{armoireBean.supprission()}" immediate="true"
+														class="btn btn-danger btn-xs" value="Supprimer">
+														<f:setPropertyActionListener value="#{armoire}"
+															target="#{armoireBean.armoire}" />
+													</h:commandButton>
+													<button type="button" data-toggle="modal"
+														data-target="#myModal" style="float: right;"
+														class="btn btn-primary">
+														<span class="glyphicon glyphicon-plus"></span> Modifier
+													</button>
+												</h:column>
+
+											</h:dataTable>
+											<br></br>
+											<button type="button" data-toggle="modal"
+												data-target="#myModal" style="float: right;"
+												class="btn btn-primary">
+												<span class="glyphicon glyphicon-plus"></span> Ajouter
+											</button>
+										</div>
+									</div>
+
+									<div id="myModal" class="modal fade" tabindex="-1"
+										role="dialog" aria-labelledby="myModalLabel"
+										aria-hidden="true">
+										<div class="modal-dialog">
+											<div class="modal-content">
+												<div class="modal-body">
+													<div class="panel-body">
+														<div class="modal-body">
+
+															<h1>
+																<FONT color="#FF8C00" style="text-align: center;">
+																	Ajouter Des Armoires </FONT>
+															</h1>
+															
+															
+															
+															<div
+																class="form-group #{!arm.valid ? 'has-error' : 'none'}">
+																<label class="col-sm-2 control-label">Id</label>
+																<h:inputText value="#{armoireBean.armoire.idarmoire}"
+																	binding="#{arm}" id="sarm" label="Id"
+																	class="form-control">
+																	<f:validateRequired />
+																</h:inputText>
+															</div>
+															<div
+																class="form-group #{!nom.valid ? 'has-error' : 'none'}">
+																<label class="col-sm-2 control-label">Nom</label> <BR />
+																<h:message for="snom" style="color:red" />
+																<BR />
+																<h:inputText value="#{armoireBean.armoire.nom}"
+																	binding="#{nom}" id="snom" label="Nom"
+																	class="form-control">
+																	<f:validateRequired />
+																</h:inputText>
+															</div>
+															<label class="col-sm-2 control-label">État</label>
+
+															<h:selectOneMenu value="#{armoireBean.armoire.etat}"
+																class="form-control col-md-push-5">
+
+																<f:selectItem itemValue="Active" />
+																<f:selectItem itemValue="Enattente" />
+																<f:selectItem itemValue="Desactive" />
+															</h:selectOneMenu>
+															<label class="col-sm-2 control-label">Lieu</label>
+
+
+															<h:selectOneMenu value="#{armoireBean.armoire.lieu}"
+																class="form-control col-md-push-5">
+																<f:selectItem itemValue="Sousse" />
+																<f:selectItem itemValue="Tunis" />
+																<f:selectItem itemValue="Monastir" />
+																<f:selectItem itemValue="Nabel" />
+																<f:selectItem itemValue="Sfax" />
+															</h:selectOneMenu>
+															<div
+																class="form-group #{!num.valid ? 'has-error' : 'none'}">
+																<label class="col-sm-2 control-label">Numéro</label> <BR />
+																<h:message for="snum" style="color:red" />
+																<BR />
+																<h:inputText value="#{armoireBean.armoire.numero}"
+																	binding="#{num}" id="snum" label="Numéro"
+																	class="form-control">
+
+																	<f:validateRequired />
+																</h:inputText>
+															</div>
+															<div
+																class="form-group #{!nbrUn.valid ? 'has-error' : 'none'}">
+																<label class="col-sm-2 control-label">Nombre
+																	d'unité</label> <BR />
+																<h:message for="snbrUn" style="color:red" />
+																<BR />
+																<h:inputText value="#{armoireBean.armoire.nombreunite}"
+																	binding="#{nbrUn}" id="snbrUn" label="Nombre d'unité"
+																	class="form-control">
+																	<f:validateRequired />
+																</h:inputText>
+															</div>
+															<div
+																class="form-group #{!type.valid ? 'has-error' : 'none'}">
+																<label class="col-sm-2 control-label">Type</label> <BR />
+																<h:message for="stype" style="color:red" />
+																<BR />
+																<h:inputText value="#{armoireBean.armoire.type}"
+																	binding="#{type}" id="stype" label="Type"
+																	class="form-control">
+																	<f:validateRequired />
+																</h:inputText>
+															</div>
+															<label class="col-sm-2 control-label">Datacenter</label>
+															<h:selectOneMenu value="#{armoireBean.nomdatacenter}"
+																class="form-control col-md-push-5">
+																<f:selectItems value="#{datacenterBean.alldatacenter}" />
+															</h:selectOneMenu>
+															<label class="col-sm-2 control-label">Position</label>
+
+															<h:selectOneMenu value="#{armoireBean.armoire.position}"
+																class="form-control col-md-push-5">
+																<f:selectItem itemValue="Gauche" />
+																<f:selectItem itemValue="Droite" />
+															</h:selectOneMenu>
+
+
+
+														</div>
+
+
+													</div>
+													<div class="modal-footer">
+														<h:commandButton type="submit" class="btn btn-success"
+															action="#{armoireBean.ajout()}" value="Save" />
+														<h:commandButton type="reset" class="btn btn-default"
+															action="gestionarmoire" value="Reset" />
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+
+			</h:form>
+
+
+
+
+
+
+
+		</h:body>
+	</ui:define>
+</ui:composition>
+</html>
